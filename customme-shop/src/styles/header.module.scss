@@ -1,0 +1,21 @@
+@import './variables.scss';
+
+.header {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;
+    padding: 5px;
+    margin:0px;
+    background-color:#A72F3B;
+    color: white;
+    position: fixed;
+    top: 0;
+    height:40px;
+    width:100%;
+    text-align: center;
+}
+.text{
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 10px;
+}
