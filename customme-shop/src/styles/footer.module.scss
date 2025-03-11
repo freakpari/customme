@@ -1,0 +1,138 @@
+.footer {
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100vw;
+    margin-top: 50px;
+    
+  
+.topSection {
+      background-color: #641C23;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 10px 0;
+      height: 180px;
+  
+      .newsletter {
+        padding: 8px;
+        margin-right: 108px;
+      input {
+          width: 392px;
+          height: 20px;
+          padding: 8px;
+          border:white 1px solid;
+          border-radius: 8px;
+          background-color: #641C23;
+
+        }
+        p{
+            color: white;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+  
+        button {
+          width: 80px;
+          height: 40px;
+          background-color: #A72F3B;
+          color: white;
+          border: none;
+          padding: 8px 12px;
+          border-radius: 8px;
+          margin-right: 20px;
+                                        }
+      }
+    }
+    .newsletter input::placeholder {
+      color: #AFAFAF;
+    }
+    .leftsection{
+      width: 213px;
+      height: 80px;
+      margin-right: 439px;
+      p{
+        font-size: 14px;
+      }
+    }
+    .socialIcons{
+      width: 176px;
+      height: 24px;
+      display: flex;
+      gap: 24px;
+      margin-left: 18.5px;
+      margin-right: 20px;
+    }
+    .socialIcons svg {
+      width: 32px;
+      height: 20px;
+    }
+  
+    .bottomSection {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      background-color: #A72F3B;
+      padding: 20px 0;
+  
+      .storeInfo {
+        flex: 1;
+        min-width: 250px;
+        text-align: center;
+  
+        .certifications {
+          display: flex;
+          justify-content: center;
+          gap: 10px;
+          margin-top: 10px;
+  
+          img {
+            width: 50px;
+            height: auto;
+          }
+        }
+      }
+  
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 60px;
+        flex: 2;
+  
+        div {
+          min-width: 200px;
+  
+          h4 {
+            margin-bottom: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            
+          }
+  
+          ul {
+            list-style: none;
+            padding: 0;
+  
+            li {
+              margin-bottom: 20px;
+              font-size: 14px;
+              cursor: pointer;
+  
+              &:hover {
+                color: #ddd;
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    .copyright {
+      background-color: #A72F3B;
+      padding: 10px;
+      font-size: 10px;
+      text-align: right;
+    }
+  }
+  
