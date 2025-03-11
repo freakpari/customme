@@ -2,16 +2,15 @@
 
 .header {
     display: flex;
-    justify-content: center; /* Centers horizontally */
+    justify-content: center; 
     align-items: center;
     padding: 5px;
     margin:0px;
     background-color:#A72F3B;
     color: white;
-    position: fixed;
     top: 0;
     height:40px;
-    width:100%;
+    width:1520px;
     text-align: center;
 }
 .text{

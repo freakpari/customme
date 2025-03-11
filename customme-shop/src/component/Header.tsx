@@ -1,6 +1,6 @@
 import styles from "../styles/header.module.scss";
 
-const Header = () => {
+export default function  Header ()  {
   return (
     <nav>
       <div className={styles.header}>
@@ -11,4 +11,3 @@ const Header = () => {
     </nav>
   );
 };
-export default Header;
