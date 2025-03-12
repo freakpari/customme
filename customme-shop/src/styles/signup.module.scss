@@ -4,7 +4,7 @@
     margin-top: 24px;
     padding: 20px;
     background: #fff;
-    border-radius: 8px;
+    border-radius: 24px;
     text-align: right;
     display: flex;
     flex-direction: column;
@@ -15,6 +15,13 @@
     color: #CBCBCB;
     
     }
+
+  }
+  .form.step-2 {
+    height: 812px; // مقدار بیشتر برای صفحه دوم
+    width: 648px;
+    margin-top: 24px;
+
 
   }
   .row {
@@ -75,6 +82,7 @@
     justify-content: center;
     gap: 8px;
   }
+
   .container {
     display: flex;
     align-items: center;
@@ -103,5 +111,37 @@
     margin: auto;
     margin-top: 32px;
     margin-bottom: 32px;
+  }
+  .address{
+    width: 600px;
+    height: 68px;
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color:#CBCBCB;
+    }
+    input {
+      width: 600px;
+      height: 40px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+  
+  }
+  .mapContainerStyle{
+    width: '600px';
+    height: '300px';
+    border-radius: 5px;
+  }
+
+  .imagetwo{
+    width: 520px;
+    height: 512px;
+    margin-top: 381px;
+    margin-right: 56px;
+    margin-bottom: 56px;
+
   }
   

@@ -1,5 +1,5 @@
 import { BrowserRouter as Router,Route,Routes} from "react-router-dom";
-import RegistrationForm from "./pages/signup";
+import Signup from "./pages/signup";
 import Home from "./pages/Home";
 import "./global.css";
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <Routes>
         {/* <Route path="/cart" element={<h1>سبد خرید</h1>} /> */}
         <Route path="/" element={<Home />} /> {/* Home page route */}
-        <Route path="/signUp" element={<RegistrationForm/>} />
+        <Route path="/signUp" element={<Signup/>} />
       </Routes>
   </Router>
   );
