@@ -1,0 +1,191 @@
+.container {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .profileSection {
+    border: 1px solid #EDEDED;
+    width: 392px;
+    height: 850px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    border-radius: 16px;
+    padding: 24px 32px;
+    margin-top: 97px;
+    margin-right: 108px;
+    margin-bottom: 876px;
+    h2{
+      margin-right:40px;
+    }
+
+
+  }
+  .profileCard{
+
+    width: 190px;
+    height: 216px;
+    padding: 0;
+    p{
+      color: #656565;
+      margin-top: 0;
+      margin-right: 20px;}
+  }
+  
+  .profileImage {
+    width: 144px;
+    height: 144px;
+    border-radius:80px;
+    margin-right: 23px;
+    margin-left: 23px;
+
+  }
+  
+  .profileDetails {
+    color: #434343;
+    margin-top: 50px;
+    width: 323px;
+    height: 132px;
+    display: flex;
+    justify-content:center;
+    ul{
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 250px; 
+      padding: 8px 0;
+      font-size: 16px;
+  }
+  label {
+    margin-right: 0;
+}
+
+  value {
+    color: #333;
+    direction: ltr;
+    text-align: left;
+    font-weight: normal;
+}
+  }
+
+  
+  .editButton {
+    margin-top: 1rem;
+  }
+  
+  .menu {
+    display: flex;
+    flex-direction: column;
+    width: 322px;
+    height: 395px;
+    margin-top: 24px;
+    overflow: hidden;
+    
+    button{
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: 322px;
+      height: 60px;
+      color: #434343;
+      gap: 8px;
+      background-color: #fff;
+      border-bottom: 1px solid #EDEDED;
+
+    }
+    button:last-child {
+      border-bottom: none;
+    }  
+  }
+
+  .dashboard{
+    color: #B95962 !important;
+    border-bottom: 1px solid #B95962 !important;
+
+  }
+
+  
+  .contentSection {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  
+  .card {
+    background: white;
+    border-radius: 16px;
+    padding: 1rem;
+  }
+  .favoritescarousel{
+    border: 1px solid #EDEDED;
+    border-radius: 16px;
+    width: 808px;
+    height: 1666px;
+    margin-top: 97px;
+    margin-right: 24px;
+  }
+  .carouselcontainer{  
+      display: flex;
+      flex-direction: row;
+      margin-right: 24px;
+  }
+  .carouselitem{
+    width: 288px;
+    height: 389px;
+    img{
+      width: 256px;
+      height: 209px;
+      border-radius: 8px;
+    }
+  }
+  .ordersContainer {
+    display: flex;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: right;
+    direction: rtl;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .orderRow{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .orderItem {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.3s ease;
+    
+    &:hover {
+      background: #f1f1f1;
+    }
+  }
+  
+  .icon {
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: #c00;
+  }

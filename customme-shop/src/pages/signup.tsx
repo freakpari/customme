@@ -9,12 +9,12 @@ const libraries = ["places"] as const;
 const mapContainerStyle = {
   width: '600px',
   height: '300px',
-  marginTop: '32px', // مقدار مارجین بالا
+  marginTop: '32px',  
 
   
 };
 const center = {
-  lat: 32.6546, // عرض جغرافیایی اصفهان
+  lat: 32.6546,    
   lng: 51.6679,
 };
 export default function Signup() {
@@ -30,7 +30,7 @@ export default function Signup() {
     PhoneNumber:"",
     zipcode:"",
     address:"",
-    location: { lat: 35.6892, lng: 51.389 }, // مختصات پیش‌فرض
+    location: { lat: 35.6892, lng: 51.389 }, 
 
   });
   const [step, setStep] = useState(1);

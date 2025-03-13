@@ -1,0 +1,34 @@
+.container {
+    width: 1224px;
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: 0.5rem 2rem;
+    margin: 0 auto;
+    margin-top: 24px;
+}
+
+.navItems {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    font-size: 0.875rem;
+    color: #434343;
+}
+
+.designButton {
+    width: 184px;
+    height: 48px;
+    background-color: #A72F3B;
+    color: white;
+    padding: 24px 8px;
+    padding-right: 24px;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    white-space: nowrap;
+    margin-left: 32px;
+}
