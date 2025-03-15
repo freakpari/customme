@@ -3,12 +3,13 @@ import Signup from "./pages/signup";
 import UserProfile from "./pages/UserProfile";
 import Home from "./pages/Home";
 import "./global.css";
+import ShoppingCard from "./pages/shoppingcard";
 function App() {
   return (
     <Router>
     <Routes>
-        {/* <Route path="/cart" element={<h1>سبد خرید</h1>} /> */}
-        <Route path="/" element={<Home />} /> {/* Home page route */}
+        <Route path="/cart" element={<ShoppingCard />} />
+        <Route path="/" element={<Home />} />
         <Route path="/signUp" element={<Signup/>} />
         <Route path="/userprofile" element={<UserProfile/>} />
 

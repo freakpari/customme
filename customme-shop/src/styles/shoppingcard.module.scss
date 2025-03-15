@@ -1,0 +1,164 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .cartDetails {
+    display: flex;
+    flex-direction: column;
+    width: 392px;
+    height: 496px;
+    padding: 20px;
+    border: 1px solid #D6D6D6;
+    border-radius: 8px;
+    background-color: #fff;
+    margin-top: 12px;
+    gap: 20px;
+  }
+  
+  .discountSection {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 20px;
+        lable{
+            font-size: 14px;
+        }
+        p{
+            font-size: 10px;
+            color: #434343;
+        }
+        inpout{
+            width: 240px;
+            height: 40px;
+        }
+        button{
+            width: 80px;
+            height: 40px;
+            border: 1px #A72F3B solid;
+            color: #A72F3B;
+        }
+  }
+  
+  discountSection button {
+    background-color: #A72F3B;
+    width: 344px;
+    height: 40px;
+    color: white;
+    padding:24px 8px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .discountSection input{
+    width: 240px;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid #D6D6D6;
+    margin-right: 32px;
+    margin-left: 8px;
+  }
+  .discountbox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .summary  {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .row{
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  }
+  
+  .summary button {
+    width: 100%;
+    padding: 10px;
+    background-color: #c62828;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+
+  
+  .productList {
+    display: flex;
+    flex-direction: column;
+    width: 808px;
+    margin-right: 108px;
+        h2{
+            color: #434343;
+            font-size: 16px;
+            border-bottom: 1px solid #D6D6D6;
+        }
+  }
+  
+  .productItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }  
+  .productInfo {
+    margin-right: 15px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    gap: 20px; 
+        h4{
+          white-space: nowrap;
+        }
+        p{
+          white-space: nowrap;
+        }
+
+  }
+  
+  .quantityControls {
+    display: flex;
+    align-items:center ;
+    gap: 10px;
+    justify-content: space-between;
+    margin-right: 80px;
+    border: 1px #D6D6D6 solid;
+    border-radius: 8px;
+      
+    
+    
+  }
+.deliveryInfo {
+    display: flex;
+    width: 140px;
+    height: 25px;
+    align-items: center;
+    gap: 5px;
+    margin-top: 100px;
+    font-size: 12px;
+    white-space: nowrap;
+    margin-right: 80px;
+  }
+
+.deleteIcon {
+    cursor: pointer;
+    color: #c62828;
+    margin-left: 10px;
+  }
+.stepper{
+    margin-top: 32px;
+    margin-right: 460px;
+    margin-left: 460px;
+
+}  
+.close{
+    margin-left: 24px;
+}
+
