@@ -4,6 +4,7 @@ import UserProfile from "./pages/UserProfile";
 import Home from "./pages/Home";
 import "./global.css";
 import ShoppingCard from "./pages/shoppingcard";
+import Selectedproduct from "./pages/SelectedProduct";
 function App() {
   return (
     <Router>
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/signUp" element={<Signup/>} />
         <Route path="/userprofile" element={<UserProfile/>} />
+        <Route path="/selectedproduct" element={<Selectedproduct />} />
 
       </Routes>
   </Router>

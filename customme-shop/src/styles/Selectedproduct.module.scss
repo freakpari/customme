@@ -1,0 +1,276 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.productDetails {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.imageSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 670px;
+    height: 576px;
+    margin-right: 108px;
+    margin-top: 32px;
+}
+
+.thumbnail {
+    width: 50px;
+    cursor: pointer;
+}
+.detailsSection {
+    flex: 1;
+    width: 522px;
+    height: 302px;
+    margin-right: 32px;
+    margin-top: 75px;
+}
+
+.productTitle {
+    font-size: 24px;
+    font-weight: bold;
+    color: #86262F;
+    border-bottom: 1px solid #ededed;
+}
+
+.priceSection {
+    display: flex;
+    width: 392px;
+    height: 146px;
+    align-items: center;
+    gap: 10px;
+    margin-right: 250px;
+
+}
+
+.price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #242424;
+    margin-right:390px ;
+    white-space: nowrap;
+}
+
+.addToCart {
+    display: flex;
+    width: 184px;
+    height: 48px;
+    background: #A72F3B;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    padding-right: 25px;
+    font-size: 14px;
+    gap: 6px;    
+}
+.addtopersonal{
+    display: flex;
+    background: #ffffff;
+    width: 184px;
+    justify-content: center;
+    height: 48px;
+    font-size: 14px;
+    color: #A72F3B;
+    border: 1px solid #A72F3B;
+    border-radius: 8px;
+    cursor: pointer;
+    align-items: center;
+    padding-right: 12px;
+    white-space: nowrap;
+    gap: 6px;
+
+
+
+    
+}
+.reviewsSection {
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+    border: #EDEDED 1px solid;
+    width: 288px;
+    height: 295px;
+    border-radius: 16px;
+    top:100px;
+    margin-top: -290px;
+    h3{
+        color: #86262F;
+        font-weight: 600;
+        font-size: 24px;
+        align-items: center;
+        line-height: 140%;
+        letter-spacing: 0;
+        margin-top: 2px;
+        margin-right: 28px;
+    }
+}
+.rating{
+    margin-right: 28px;
+
+    p{
+    font-weight: 200;
+    color:#898989;
+    font-size: 20px;
+
+
+}
+    span{
+        font-weight: 700;
+        color: black;
+        font-size: 24px;
+    }
+}
+.ratingSummary {
+    display: flex;
+    gap: 1px;
+    flex-direction: column; 
+    p{
+        color: #656565;
+        margin-right: 28px;
+}
+    button{
+        border: 1px solid #A72F3B;
+        width: 161px;
+        height: 48px;
+        color: #A72F3B;
+        margin-top: 3px;
+        margin-right: 28px;
+    }
+
+
+}
+
+.stars {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-right: 28px;
+    gap: 5px;
+    p{
+        color: #898989;
+    }
+}
+  
+.filledStar {
+    color:#F4B740;
+  }
+  
+.emptyStar {
+    color: lightgray;
+  }
+  
+.reviewItem {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+.reviewActions {
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.sizebutton {
+    padding:  8px 24px;
+    width: 93px;
+    height: 48px;
+    border-radius: 8px;
+    border: 1px solid #A72F3B;
+    color: #A72F3B;
+    font-size: 16px;
+
+} 
+.reviewsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    width: 808px;
+    margin-right: 400px;
+    top: 100px;
+    flex: 1 1 100%;
+  }
+
+.reviewCard {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .rating {
+    display: flex;
+    margin: 0.5rem 0;
+    align-items: center;
+  }
+  
+  .star {
+    color: #f39c12;
+  }
+  
+  .comment {
+    font-size: 16px;
+    margin: 0.5rem 0;
+  }
+  
+  .features {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+  }
+  
+  .pros {
+    color: green;
+  }
+  
+  .cons {
+    color: red;
+  }
+  
+  .feedback {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  .thumbUp {
+    color: green;
+    cursor: pointer;
+  }
+  
+.thumbDown {
+    color: red;
+    cursor: pointer;
+  }
+.shirtImage{
+    display: flex;
+    gap: 12px;
+}
+.centerSection{
+    width: 325px;
+    margin-right: 500px;
+    margin-top: 112px;
+
+    p{
+        white-space: nowrap;
+    }
+}  
