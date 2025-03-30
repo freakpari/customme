@@ -6,6 +6,7 @@ import "./global.css";
 import ShoppingCard from "./pages/shoppingcard";
 import Selectedproduct from "./pages/SelectedProduct";
 import OtherProduct from "./pages/OtherProduct";
+import OrderHistory from "./pages/OrderHistory";
 function App() {
   return (
     <Router>
@@ -16,6 +17,8 @@ function App() {
         <Route path="/userprofile" element={<UserProfile/>} />
         <Route path="/selectedproduct" element={<Selectedproduct />} />
         <Route path="/otherproduct" element={<OtherProduct />} />
+        <Route path="/orderhistory" element={<OrderHistory />} />
+
 
 
       </Routes>
