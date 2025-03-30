@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import "./global.css";
 import ShoppingCard from "./pages/shoppingcard";
 import Selectedproduct from "./pages/SelectedProduct";
+import OtherProduct from "./pages/OtherProduct";
 function App() {
   return (
     <Router>
@@ -14,6 +15,8 @@ function App() {
         <Route path="/signUp" element={<Signup/>} />
         <Route path="/userprofile" element={<UserProfile/>} />
         <Route path="/selectedproduct" element={<Selectedproduct />} />
+        <Route path="/otherproduct" element={<OtherProduct />} />
+
 
       </Routes>
   </Router>
