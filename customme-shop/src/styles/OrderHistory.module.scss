@@ -4,24 +4,26 @@
     height: 798px;
     border: 1px solid #ededed;
     border-radius: 16px;
-    margin-right: 624px;
-    margin-top: -1773px !important;
-    h2{
+    margin-right: 24px;
+    margin-top: 98px;
+    margin-bottom: 200px;
+    h2 {
         color: #242424;
         font-size: 24px;
         font-weight: bold;
         margin-right: 24px;
         margin-top: 24px;
-
     }
-.maincontainer{
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    display: flex;
-    justify-content: flex-start;
-    width: 100%;
 }
+
+.maincontent {
+    display: flex;
+    gap: 5px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: auto;
+}
+
 .tabs {
     display: flex;
     gap: 20px;
@@ -31,18 +33,20 @@
         cursor: pointer;
         padding: 10px 15px;
         &.active {
-        color: #A72F3B;
-        border-bottom: 3px solid #A72F3B;
+            color: #A72F3B;
+            border-bottom: 3px solid #A72F3B;
         }
     }
-    }
+}
+
 .orderslist {
     display: flex;
     flex-direction: column;
     gap: 20px;
     width: 760px;
     height: 306px;
-    }
+}
+
 .orderitem {
     display: flex;
     flex-direction: column;
@@ -50,47 +54,43 @@
     padding: 15px;
     border-radius: 8px;
     background: #fff;
+}
+
 .orderinfo {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        span {
+    display: flex;
+    justify-content: space-between;
+    span {
         margin: 5px 0;
-        }
     }
+}
+
 .orderimages {
-        display: flex;
-        gap: 25px;
-        border: 1px solid #ddd;
-        margin-top: 10px;
-        width: 700px;
-        height: 88px;
-        img {
+    display: flex;
+    gap: 25px;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+    width: 700px;
+    height: 88px;
+    img {
         width: 88px;
         height: 88px;
         border-radius: 8px;
-        }
-    }
-.vieworder {
-        margin-top: 10px;
-        margin-right: 576px;
-        padding: 8px 12px;
-        border: none;
-        color:#A72F3B;
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-        border-radius: 5px;
-    }
     }
 }
-.loadtext{
+
+.vieworder {
+    margin-top: 10px;
+    margin: 0 auto;  // برای مرکز کردن دکمه
+    padding: 8px 12px;
+    border: none;
+    color: #A72F3B;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.loadtext {
     display: flex;
     align-items: center;
 }
-.footer{
-    margin-top: 163px;
-    bottom: 0 !important;
-    position: relative;
-}
-

@@ -118,7 +118,7 @@ export default function Signup() {
           </div>
         </div>
         <div className={styles.inputGroup}>
-          <label>تاریخ تولد</label>
+        <label>تاریخ تولد</label>
           <input type="date" name="birthDate" value={formData.birthDate} onChange={handleChange} />
         </div>
               <button type="submit" className={styles.submitButton} >

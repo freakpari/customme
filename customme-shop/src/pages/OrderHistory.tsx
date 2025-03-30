@@ -34,7 +34,7 @@ export default function OrderHistory  () {
     <>
         <Navbar />
         <MainMenu />
-        <div className={styles.mainContainer}>
+        <div className={styles.maincontent}>
         <Profile />
         <div className={styles.orderhistory}>
             <h2>تاریخچه سفارشات</h2>
@@ -95,13 +95,12 @@ export default function OrderHistory  () {
                     <img src="/bill.svg" />
                     مشاهده سفارش</p>
                 </div>
+                
             ))}
             </div>
-        </div>
-        </div>
-        <div className={styles.footer}>
+            </div>
+        </div>        
         <Footer />
-    </div>
     </>
   
     );
