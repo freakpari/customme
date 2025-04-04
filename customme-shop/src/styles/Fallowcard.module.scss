@@ -1,0 +1,82 @@
+.profilecard {
+    width: 258px;
+    background: white;
+    border-radius: 16px;
+    text-align: center;
+    padding: 20px;
+    font-family: "Arial", sans-serif;
+    direction: rtl;
+    border: 1px solid #ededed;
+  
+    .profileheader {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+    .profileimage {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+  
+    .profilename {
+        margin-top: 10px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+    }
+  
+    .profilestats {
+      margin: 15px 0;
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      color: #666;
+    }
+  
+    .designs {
+      display: flex;
+      justify-content: space-around;
+      margin: 15px 0;
+  
+      .designimage {
+        width: 80px;
+        height: 80px;
+        border-radius: 8px;
+        object-fit: cover;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+    }
+  
+    .followbutton {
+      background: #d43f3f;
+      color: white;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+  
+      &:hover {
+        background: #b83131;
+      }
+    }
+  }
+  .add{
+    width: 256px;
+    height:40px;
+    background-color: #fff;
+    border: 1px solid #A72F3B;
+    border-radius:8px;
+    display: flex;
+    align-items: center;
+    color: #A72F3B;
+    justify-content: center;
+    gap: 4px;
+    
+  }
+  

@@ -21,9 +21,6 @@ function App() {
         <Route path="/orderhistory" element={<OrderHistory />} />
         <Route path="/accountinfo" element={<AccountInfo />} />
 
-
-
-
       </Routes>
   </Router>
   );

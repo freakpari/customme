@@ -192,8 +192,7 @@ export default function Signup() {
           ) : (
             <img src="/Photo2.svg" className={styles.imagetwo} />
           )}
-        </div>
-      </div>
+        </div></div>
 
 
       <Footer />
