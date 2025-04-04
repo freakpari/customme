@@ -6,15 +6,15 @@
     align-items: center;
     padding: 5px;
     margin:0px;
-    background-color:#A72F3B;
-    color: white;
+    background-color:$primary-color;
+    color: $tint-1;
     top: 0;
     height:40px;
-    width:1520px;
+    width:100vw;
     text-align: center;
 }
 .text{
-    color: rgb(255, 255, 255);
+    color:$tint-1;
     text-align: center;
     font-size: 10px;
 }
