@@ -1,9 +1,10 @@
+@use "variables.scss";
 .container {
     width: 1224px;
     height: 64px;
     display: flex;
     justify-content: space-between;
-    background-color: white;
+    background-color: variables.$tint-1;
     padding: 0.5rem 2rem;
     margin: 0 auto;
     margin-top: 24px;
@@ -14,15 +15,15 @@
     align-items: center;
     gap: 80px;
     font-size: 0.875rem;
-    color: #434343;
+    color: variables.$gray-9;
     cursor: pointer;
 }
 
 .designButton {
     width: 184px;
     height: 48px;
-    background-color: #A72F3B;
-    color: white;
+    background-color: variables.$primary-color;
+    color:variables.$tint-1;
     padding: 24px 8px;
     padding-right: 24px;
     border-radius: 8px;

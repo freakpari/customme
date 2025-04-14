@@ -1,3 +1,5 @@
+@use "variables.scss";
+
 .container {
     display: flex;
     justify-content: space-between;
@@ -10,42 +12,43 @@
     width: 392px;
     height: 496px;
     padding: 20px;
-    border: 1px solid #D6D6D6;
-    border-radius: 8px;
-    background-color: #fff;
+    border: 1px solid variables.$gray-4;
+    border-radius: 16px;
+    background-color: variables.$tint-1;
     margin-top: 12px;
-    gap: 20px;
+    gap: 5px;
+    margin-left: 108px;
   }
   
   .discountSection {
     display: flex;
     flex-direction: column;
     gap: 2px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
         lable{
             font-size: 14px;
         }
         p{
             font-size: 10px;
-            color: #434343;
+            color: variables.$gray-9;
         }
-        inpout{
+        input{
             width: 240px;
-            height: 40px;
-        }
+            height: 20px;
+            margin-right: 32px;}
         button{
             width: 80px;
             height: 40px;
-            border: 1px #A72F3B solid;
-            color: #A72F3B;
+            border: 1px variables.$primary-color solid;
+            color: variables.$primary-color;
         }
   }
   
   discountSection button {
-    background-color: #A72F3B;
+    background-color: variables.$primary-color;
     width: 344px;
     height: 40px;
-    color: white;
+    color: variables.$tint-1;
     padding:24px 8px;
     border: none;
     border-radius: 8px;
@@ -55,7 +58,7 @@
     width: 240px;
     height: 40px;
     border-radius: 8px;
-    border: 1px solid #D6D6D6;
+    border: 1px solid variables.$gray-4;
     margin-right: 32px;
     margin-left: 8px;
   }
@@ -79,8 +82,8 @@
   .summary button {
     width: 100%;
     padding: 10px;
-    background-color: #c62828;
-    color: white;
+    background-color: variables.$primary-color;
+    color: variables.$tint-1;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -94,9 +97,9 @@
     width: 808px;
     margin-right: 108px;
         h2{
-            color: #434343;
+            color: variables.$gray-9;
             font-size: 16px;
-            border-bottom: 1px solid #D6D6D6;
+            border-bottom: 1px solid variables.$gray-4;
         }
   }
   
@@ -105,7 +108,7 @@
     align-items: center;
     margin-bottom: 20px;
     padding: 10px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid variables.$gray-4;
   }  
   .productInfo {
     margin-right: 15px;
@@ -129,9 +132,8 @@
     gap: 10px;
     justify-content: space-between;
     margin-right: 80px;
-    border: 1px #D6D6D6 solid;
+    border: 1px  solid variables.$gray-4;
     border-radius: 8px;
-      
     
     
   }
@@ -147,11 +149,6 @@
     margin-right: 80px;
   }
 
-.deleteIcon {
-    cursor: pointer;
-    color: #c62828;
-    margin-left: 10px;
-  }
 .stepper{
     margin-top: 32px;
     margin-right: 460px;

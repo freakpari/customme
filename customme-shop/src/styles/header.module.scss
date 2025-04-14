@@ -1,4 +1,4 @@
-@import './variables.scss';
+@use 'variables.scss';
 
 .header {
     display: flex;
@@ -6,15 +6,15 @@
     align-items: center;
     padding: 5px;
     margin:0px;
-    background-color:$primary-color;
-    color: $tint-1;
+    background-color:variables.$primary-color;
+    color: variables.$tint-1;
     top: 0;
     height:40px;
     width:100vw;
     text-align: center;
 }
 .text{
-    color:$tint-1;
+    color:variables.$tint-1;
     text-align: center;
     font-size: 10px;
 }

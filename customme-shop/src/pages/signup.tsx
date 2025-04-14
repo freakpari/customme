@@ -67,7 +67,12 @@ export default function Signup() {
   return (
     <div>
       <Navbar />
-      <img className={styles.stepper} src="/Stepper.svg" alt="stepper" />
+      {step === 1 && ( 
+        <img className={styles.stepper} src="/Stepper.svg" alt="stepper" />
+      )}
+      {step === 2 && ( 
+        <img className={styles.stepper} src="/Stepper2.svg" alt="stepper" />
+      )}
       <div className={styles.title}>
       <h2 >فرم ثبت اطلاعات</h2>
       </div>
@@ -130,7 +135,6 @@ export default function Signup() {
 
           {step === 2 && (
             <>
-            {/* <form className={styles.containertwo}> */}
               <div className={styles.row}>
                 <div className={styles.inputGroup}>
                   <label>شماره موبایل</label>
@@ -180,7 +184,6 @@ export default function Signup() {
                 ثبت اطلاعات
                 <img src="/arrow-left.svg" alt="arrow icon" />
               </button>
-              {/* </form> */}
             </>
           )}
         </form>

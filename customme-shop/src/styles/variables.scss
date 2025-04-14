@@ -1,11 +1,23 @@
-// 🎨 رنگ‌های اصلی
 $primary-color: #A72F3B;
-$secondary-color: #F8F8F8;  // پس‌زمینه
-$text-color: #333;  // رنگ متن
-$border-color: #E5E5E5;  // رنگ خطوط
+//shade
+$shade-1:#000000;
+$shade-6:#641C23;
+$shade-7:#86262F;
+//tint
+$tint-1:#ffffff;
+$tint-5:#EDD5D8;
+$tint-6:#CA8289;
+$tint-7:#B95962;
+//gray
+$gray-3:#EDEDED;
+$gray-4:#D6D6D6;
+$gray-5:#CBCBCB;
+$gray-7:#898989;
+$gray-8 : #656565;
+$gray-9:#434343;
+$gray-10:#242424;
 
-// 🖋️ فونت‌ها
+
 $font-primary: 'IRANYekan', sans-serif;
 
-// 📏 سایه‌ها
 $box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);

@@ -1,3 +1,5 @@
+@use "variables.scss";
+
 .container {
     display: flex;
     gap: 20px;
@@ -7,19 +9,19 @@
     width: 288px;
     height: 481px;
     padding: 15px;
-    background: #ffff;
-    border: 1px solid #D6D6D6;
+    background: variables.$tint-1;
+    border: 1px solid variables.$gray-4;
     border-radius: 8px;
     margin-right: 108px;
     margin-top: 24px;
     h3{
-        color: #242424;
+        color:variables.$gray-10;
         font-size: 16px;
         line-height: 180%;
     }
     p{
         font-size: 10px;
-        color: #A72F3B;
+        color: variables.$primary-color;
         font-weight: bold;
 
     }
@@ -62,15 +64,15 @@
   }
   
 .pagination .active {
-    background: red;
-    color: white;
+    background:variables.$tint-6;
+    color: variables.$tint-1;
 }
 .card {
-    background: white;
+    background:variables.$tint-1;
     padding: 16px;
     border-radius: 16px;
     text-align: center;
-    border: 1px solid #CBCBCB;
+    border: 1px solid variables.$gray-5;
     width: 288px;
     height: 429px;
   }

@@ -12,8 +12,8 @@ function App() {
   return (
     <Router>
     <Routes>
-        <Route path="/cart" element={<ShoppingCard />} />
         <Route path="/" element={<Home />} />
+        <Route path="/cart" element={<ShoppingCard />} />
         <Route path="/signUp" element={<Signup/>} />
         <Route path="/userprofile" element={<UserProfile/>} />
         <Route path="/selectedproduct" element={<Selectedproduct />} />

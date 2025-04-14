@@ -1,3 +1,4 @@
+@use 'variables.scss';
 .navbar {
     display: flex;
     align-items: center;
@@ -6,7 +7,7 @@
     min-height: 80px;
     top:40px;
     left: 0;
-    background: white; 
+    background: variables.$tint-1; 
     z-index: 1000; 
     display: flex;
     align-items: center;
@@ -29,7 +30,7 @@
   
   
   .listItem {
-    color: #434343;
+    color: variables.$gray-9;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -43,21 +44,21 @@
     display: flex;
     align-items: center;
     width: 100%;
-    max-width: 600px; // طول کادر جستجو
-    border: 1px solid #ccc;
+    max-width: 600px; 
+    border: 1px solid variables.$gray-4;
     border-radius: 25px;
     padding: 8px 16px;
-    background: white;
+    background: variables.$tint-1;
     margin-left: 76.54px;
   }
   
   .icon {
     position: absolute;
-    left: 16px; // موقعیت آیکون در سمت چپ
+    left: 16px; 
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #b22222; // رنگ قرمز مشابه تصویر
+    color: variables.$primary-color;
   }
   
   .searchInput {
@@ -65,13 +66,13 @@
     border: none;
     background: transparent;
     font-size: 16px;
-    text-align: right; // متن در سمت راست
+    text-align: right; 
     outline: none;
-    color: #b22222; // رنگ متن مشابه تصویر
+    color: variables.$primary-color; 
   }
   
   .searchInput::placeholder {
-    color: #b22222;
+    color: variables.$primary-color;
   }
   
   .navbarLogo {

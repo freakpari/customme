@@ -4,7 +4,7 @@ import styles from "../styles/Home.module.scss";
 import Fallowcard from '../component/Fallowcard';
 import Footer from '../component/Footer';
 
-
+import MainMenu from '../component/MainMenu';
 
 const categories = [
     { id: 1, name: "قاب موبایل", image: "/book.svg" },
@@ -64,6 +64,7 @@ const popular = {
     <div>
         <Header />
         <Navbar />
+        <MainMenu />
         <div className={styles.banner}>
         <div className={styles.bannerContent}>
         <div className={styles.title}>
@@ -169,7 +170,7 @@ const popular = {
     
     </div>
     <h3 style={{whiteSpace:"nowrap"}} className={styles.categoriesTitle}>
-        <img src="/star.svg" alt="star" />
+        <img src="/star.svg" style={{width:"30px"}} alt="star" />
         طراحان برتر
           <div style={{width:"990px"}} className={styles.line}></div>
             <p style={{whiteSpace:"nowrap"}}>مشاهده بیشتر</p>
@@ -241,8 +242,8 @@ const popular = {
             
             {Array.from({ length: 4 }).map((_, index) => (
             <div key={index} className={styles.card}>
-                <img src={product.image} alt={product.title} className={styles.image} />
-                <h3 className={styles.title}>{product.title}
+                <img src="/phone.svg" alt={product.title} className={styles.image} />
+                <h3 className={styles.title}>قاب موبایل
                 <img src="/Like2.svg" />
                 </h3>
                 <p>داری رنگ بندی،قابل طراحی</p>
