@@ -32,7 +32,7 @@ export default function FilterSidebar  () {
         </div>
         <div className={styles.header} >
         <span>فقط کالاهای موجود</span>
-        <img  style={{marginRight : "112px"}} src="/SwitchButton.svg" />
+        <img  style={{marginRight : "105px"}} src="/SwitchButton.svg" />
         </div>
         <div className={styles.dropdown}>
         <div className={styles.header} >
@@ -47,7 +47,7 @@ export default function FilterSidebar  () {
         </div>
         </div>
         <div className={styles.dropdown}>
-        <div className={styles.header} >
+        <div className={styles.header2} >
         <span>طرح</span>
         <img  style={{marginRight : "229px"}} src="/arrowdown.svg"  />
         </div>
