@@ -1,7 +1,6 @@
 import styles from  "../styles/UserProfile.module.scss";
 export default function Profiletwo () {
 return (
-    <div className={styles.container}>
     <div className={styles.profileSection}>
     <div className={styles.profileCard}>
     <img src="/profile.svg" alt="Profile" className={styles.profileImage} />
@@ -12,16 +11,19 @@ return (
         <div className={styles.profileDetails}>
         <ul>
         <li>
-        <span className={styles.label}>اعتبار خرید</span>
+        <span className={styles.label}>اعتبار خرید
+
+        </span>
+
         <span className={styles.value}>۱۰۰,۰۰۰ تومان</span>
         </li>
         <li>
         <span className={styles.label}>تعداد طرح‌ها</span>
-        <span className={styles.value}>۴۵</span>
+        <span style={{marginRight:"105px"}} className={styles.value}>۴۵</span>
         </li>
         <li>
         <span className={styles.label}>تعداد سفارش‌ها</span>
-        <span className={styles.value}>۷۰</span>
+        <span  style={{marginRight:"90px"}} className={styles.value}>۷۰</span>
 </li>
 </ul>
 </div>
@@ -45,12 +47,11 @@ return (
 دنبال شوندگان
 </button>
 <button className={styles.dashboard}>
-<img src="/inform.svg" />
+<img src="/user2.svg" />
 اطلاعات حساب کاربری</button>
 <button> 
 <img src="/logout.svg" />
 خروج</button>
-</div>
 </div>
 </div>
 )

@@ -21,7 +21,6 @@ export default function AccountInfo() {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
     
-   
     return(
         <>
         <Navbar />
@@ -90,7 +89,6 @@ export default function AccountInfo() {
             <input type="password" name="password" value={formData.password} onChange={handleChange} />
           </div>
         </div>
-       
         <button type="submit" className={styles.submitButton}>
         ثبت اطلاعات
         </button>

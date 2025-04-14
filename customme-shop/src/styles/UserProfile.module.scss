@@ -1,14 +1,15 @@
 @use "variables.scss";
 
+
 .container {
-    display: flex;
-    gap: 2rem;
-  }
-  
+  display: flex;
+  gap: 2rem;
+}
+
   .profileSection {
     border: 1px solid variables.$gray-3;
     width: 392px;
-    height: 850px;
+    height: 800px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,7 +18,6 @@
     padding: 24px 32px;
     margin-top: 97px;
     margin-right: 108px;
-    margin-bottom: 876px;
     h2{
       margin-right:40px;
     }
@@ -50,29 +50,33 @@
     width: 323px;
     height: 132px;
     display: flex;
+    gap: 40px;
     justify-content:center;
+    display: flex;
     ul{
       list-style: none;
-      margin: 0;
       padding: 0;
     }
     li {
       display: flex;
-      justify-content: space-between;
       align-items: center;
       width: 250px; 
       padding: 8px 0;
       font-size: 16px;
   }
-  label {
+  .label {
     margin-right: 0;
+  
 }
 
-  value {
+
+  .value {
     color: #333;
     direction: ltr;
     text-align: left;
     font-weight: normal;
+    margin-right: 80px;
+    white-space: nowrap;
 }
   }
 
@@ -146,6 +150,11 @@
       height: 209px;
       border-radius: 8px;
     }
+  }
+  .lable{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .ordersContainer {
     display: flex;

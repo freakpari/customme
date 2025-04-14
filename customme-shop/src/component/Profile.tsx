@@ -18,11 +18,11 @@ return (
         </li>
         <li>
         <span className={styles.label}>تعداد طرح‌ها</span>
-        <span className={styles.value}>۴۵</span>
+        <span style={{marginRight:"105px"}} className={styles.value}>۴۵</span>
         </li>
         <li>
         <span className={styles.label}>تعداد سفارش‌ها</span>
-        <span className={styles.value}>۷۰</span>
+        <span style={{marginRight:"90px"}} className={styles.value}>۷۰</span>
 </li>
 </ul>
 </div>
