@@ -101,10 +101,12 @@
     padding-top: 20px;
     border: variables.$gray-3 1px solid;
     width: 288px;
-    height: 295px;
+    height: 305px;
     border-radius: 16px;
     top:100px;
     margin-top: -290px;
+    margin-right: 108px;
+    
     h3{
         color: variables.$shade-7;
         font-weight: 600;
@@ -123,6 +125,8 @@
     font-weight: 200;
     color:variables.$gray-7;
     font-size: 20px;
+    margin-left: 20px;
+
 
 
 }
@@ -139,6 +143,8 @@
     p{
         color: variables.$gray-8;
         margin-right: 28px;
+        font-size: 12px;
+        
 }
     button{
         border: 1px solid variables.$primary-color;
@@ -146,9 +152,20 @@
         height: 48px;
         color: variables.$primary-color;
         margin-top: 3px;
-        margin-right: 28px;
+        margin-right: 18px;
+        margin-bottom: 10px;
     }
 
+
+}
+.user{
+  color: #00966d;
+  margin-left:468px;
+  white-space: nowrap;
+}
+.name{
+  color: variables.$gray-7;
+  white-space: nowrap;
 
 }
 
@@ -198,7 +215,7 @@
     gap: 1rem;
     padding: 1rem;
     width: 808px;
-    margin-right: 400px;
+    margin-right: 450px;
     top: 100px;
     flex: 1 1 100%;
   }
@@ -207,14 +224,21 @@
     background: variables.$tint-1;
     padding: 1rem;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
   }
+.date{
+    color: variables.$gray-7;
+    white-space: nowrap;
+
+}
   
   .header {
     display: flex;
-    justify-content: space-between;
     font-size: 14px;
-    color: #666;
+    gap:32px;
+    border-bottom: variables.$gray-3 1px solid;
+    margin-bottom: 16px;
+
   }
   
   .rating {
@@ -224,44 +248,54 @@
   }
   
   .star {
-    color: #f39c12;
+    color: #F4B740;
   }
   
   .comment {
     font-size: 16px;
     margin: 0.5rem 0;
+    color: variables.$gray-10;
   }
   
   .features {
     display: flex;
-    justify-content: space-between;
     font-size: 14px;
+    flex-direction: row;
+    border-bottom: 1px solid variables.$gray-3;
+
   }
   
   .pros {
-    color: green;
+    color: variables.$gray-9; 
+    width: 80px;
+    height: 80px;
   }
   
   .cons {
-    color: red;
+    color: variables.$gray-9; 
+    width: 50px;
+    height:auto;
+    font-size: 16px;
   }
   
+
   .feedback {
     display: flex;
+    width: 199px;
+    height: 24px;
     align-items: center;
     gap: 0.5rem;
     margin-top: 0.5rem;
+    margin-right: 598px;
+
+
+    span{
+      color: variables.$gray-7;
+      font-size: 14px;
+    }
   }
   
-  .thumbUp {
-    color: green;
-    cursor: pointer;
-  }
-  
-.thumbDown {
-    color: red;
-    cursor: pointer;
-  }
+
 .shirtImage{
     display: flex;
     gap: 12px;
@@ -273,5 +307,8 @@
 
     p{
         white-space: nowrap;
+        align-items: center;
+        justify-content: center;
+
     }
 }  

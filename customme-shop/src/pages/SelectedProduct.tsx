@@ -1,11 +1,12 @@
 import styles from '../styles/Selectedproduct.module.scss';
-import { FaStar,  FaThumbsUp, FaThumbsDown} from "react-icons/fa";
+import { FaStar} from "react-icons/fa";
 import Navbar from '../component/Navbar';
 import MainMenu from '../component/MainMenu';
 import Footer from '../component/Footer';
 
 interface Review {
   id: number;
+  name:string;
   user: string;
   date: string;
   rating: number;
@@ -17,21 +18,35 @@ interface Review {
 const reviews: Review[] = [
   {
     id: 1,
+    name:"نگار زمانی",
     user: "خریدار",
     date: "16 آذر 1403",
-    rating: 5,
+    rating: 3,
     comment: "بسیار عالی و با کیفیت",
-    pros: ["با کیفیت"],
-    cons: ["گران", "سخت"],
+    pros: ["با کیفیت","خنک"],
+    cons: ["گران"],
   },
   {
     id: 2,
+    name:"نگار زمانی",
+    user: "خریدار",
+    date: "16 آذر 1403",
+    rating: 4,
+    comment: "بسیار عالی و با کیفیت",
+    pros: ["با کیفیت","خنک"],
+    cons:["گران"],
+    
+  },
+  {
+    id: 3,
+    name:"نگار زمانی",
     user: "خریدار",
     date: "16 آذر 1403",
     rating: 5,
     comment: "بسیار عالی و با کیفیت",
-    pros: ["با کیفیت"],
-    cons: ["گران", "سخت"],
+    pros: ["با کیفیت","خنک"],
+    cons: ["گران"],
+    
   },
 ];
 export default function Selectedproduct () {
@@ -67,7 +82,7 @@ export default function Selectedproduct () {
           </div>
         </div>
       <div className={styles.centerSection}>
-        <p style={{color:"#898989"}}> <FaThumbsUp className={styles.thumbUp}/>۷۰٪ ( ۱۲۰ نفر) از خرید این محصول رضایت داشته اند</p>
+        <p style={{color:"#898989"}}> <img src="/up.svg"  />۷۰٪ ( ۱۲۰ نفر) از خرید این محصول رضایت داشته اند</p>
         <div className={styles.shirtImage}>
           <img src='/tshirtred.svg' />
           <img src='/tshirtblack.svg' />
@@ -95,31 +110,34 @@ export default function Selectedproduct () {
       {reviews.map((review) => (
         <div key={review.id} className={styles.reviewCard}>
           <div className={styles.header}>
-            <span className={styles.user}>{review.user}</span>
             <span className={styles.date}>{review.date}</span>
-          </div>
-          <div className={styles.rating}>
+            <span className={styles.name}>{review.name}</span>
+            <span className={styles.user}>{review.user}</span>
+            <div className={styles.rating}>
             {[...Array(review.rating)].map((_, i) => (
               <FaStar key={i} className={styles.star} />
             ))}
+          </div>
           </div>
           <p className={styles.comment}>{review.comment}</p>
           <div className={styles.features}>
             <div className={styles.pros}>
               {review.pros.map((pro, i) => (
-                <span key={i} className={styles.pro}>+ {pro}</span>
+                <p key={i} className={styles.pro}><span style={{color:"#00966D"}}>+</span> {pro}</p>
               ))}
             </div>
+
             <div className={styles.cons}>
               {review.cons.map((con, i) => (
-                <span key={i} className={styles.con}>- {con}</span>
+                <p key={i} className={styles.cons}><span style={{color:"#C30000"}}>-</span>{con}</p>
               ))}
             </div>
-          </div>
+            </div>
+
           <div className={styles.feedback}>
             <span>آیا این دیدگاه مفید بود؟</span>
-            <FaThumbsUp className={styles.thumbUp} />
-            <FaThumbsDown className={styles.thumbDown} />
+            <img src="/up.svg" />
+            <img src="dislike.svg" />
           </div>
         </div>
       ))}
@@ -130,4 +148,3 @@ export default function Selectedproduct () {
     </>
   );
 };
-

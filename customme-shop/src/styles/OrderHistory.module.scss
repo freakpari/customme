@@ -68,7 +68,6 @@
 .orderimages {
     display: flex;
     gap: 25px;
-    border: 1px solid #ddd;
     margin-top: 10px;
     width: 700px;
     height: 88px;
@@ -81,7 +80,7 @@
 
 .vieworder {
     margin-top: 10px;
-    margin: 0 auto;   
+    margin-right: 576px;
     padding: 8px 12px;
     border: none;
     color: variables.$primary-color;
