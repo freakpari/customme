@@ -159,12 +159,10 @@
     width: 1224px;
     margin-right: 92px;
     margin-top: 50px;
-
-    
   }
   
   .card {
-    border: 1px solid ;
+    border: 1px solid variables.$gray-5 ;
     border-radius: 16px;
     padding: 15px;
     text-align: center;
@@ -418,6 +416,8 @@
     margin-top: 24px;
 
   }
+
+  
   
 
   

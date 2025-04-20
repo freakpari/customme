@@ -3,7 +3,6 @@ import Header from '../component/Header';
 import styles from "../styles/Home.module.scss";
 import Fallowcard from '../component/Fallowcard';
 import Footer from '../component/Footer';
-
 import MainMenu from '../component/MainMenu';
 
 const categories = [
@@ -232,13 +231,13 @@ const popular = {
             <img src='brush.svg' alt='brush' />
             شروع طراحی</button>
                 </div>
-                <h3 style={{whiteSpace:"nowrap"}} className={styles.categoriesTitle}>
+        <h3 style={{whiteSpace:"nowrap"}} className={styles.categoriesTitle}>
         <img src="/fav.svg" alt="star" />
         علاقمندی ها
           <div style={{width:"990px"}} className={styles.line}></div>
             <p style={{whiteSpace:"nowrap"}}>مشاهده بیشتر</p>
             </h3>
-                <div className={styles.grid}>
+            <div className={styles.grid}>
             
             {Array.from({ length: 4 }).map((_, index) => (
             <div key={index} className={styles.card}>
