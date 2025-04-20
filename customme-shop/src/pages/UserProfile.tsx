@@ -3,38 +3,17 @@ import MainMenu from "../component/MainMenu";
 import Navbar from "../component/Navbar";
 import Profile from "../component/Profile";
 import styles from "../styles/UserProfile.module.scss";
-import { FaCheckCircle, FaTimesCircle, FaCommentDots, FaBoxOpen, FaImages, FaEllipsisH } from "react-icons/fa";
 
 
 
-const favoriteItems = [
-  {
-    id: 1,
-    title: "کیف زنانه",
-    description: "دارای رنگ بندی، قابل طراحی",
-    price: "150,000 تومان",
-    image: "bag.svg",
-  },
-    {
-      id: 2,
-      title: "استیکر فرندز",
-      description: "قابل طراحی و چاپ بر روی انواع محصولات",
-      price: "150,000 تومان",
-      image: "sticker.svg",
-    },
-  
-    {
-      id: 3,
-      title: "جوراب زنانه",
-      description: "دارای رنگ بندی، قابل طراحی",
-      price: "150,000 تومان",
-      image: "socks.svg",
-    },
-  ];
-  const titles = ["علاقه مندی های من", "گالری من","خریدهای پرتکرار من "];
 
   
 export default function UserProfile() {
+  const product = {
+    title: " تیشرت زنانه",
+    price: "۱۵۰,۰۰۰",
+};
+
     return(
         <>
           <Navbar />
@@ -43,64 +22,118 @@ export default function UserProfile() {
           <Profile />
           
           <div className={styles.favoritescarousel}>
-          <div className={styles.ordersContainer}>
-      <h2 className={styles.title}>سفارشات من</h2>
-
+          <div>
+      <h2 className={styles.categoriesTitle}>سفارشات من</h2>
+      </div>
       <div className={styles.orderRow}>
-        <div className={styles.orderItem}>
-          <FaImages className={styles.icon} />
-          <p>۱۰ محصول</p>
-          <span>در گالری</span>
+      
+      <div className={styles.orderItem}>
+          <img src="/icon1.svg" className={styles.icon} />
+          <p>۴۵ سفارش</p>
+          <span>جاری</span>
         </div>
-
         <div className={styles.orderItem}>
-          <FaBoxOpen className={styles.icon} />
-          <p>۲۸ محصول</p>
-          <span>فیزیکی</span>
-        </div>
-
-        <div className={styles.orderItem}>
-          <FaCheckCircle className={styles.icon} />
+          <img src="/icon2.svg" className={styles.icon} />
           <p>۴۵ سفارش</p>
           <span>ارسال شده</span>
         </div>
+        <div className={styles.orderItem}>
+          <img src="/icon3.svg" className={styles.icon} />
+          <p>۱۰ محصول</p>
+          <span>در گالری</span>
+        </div>
+        <div className={styles.orderItem}>
+          <img src="/icon4.svg" className={styles.icon} />
+          <p>۵۴ نظر</p>
+          <span>ثبت شده</span>
+        </div>
 
         <div className={styles.orderItem}>
-          <FaTimesCircle className={styles.icon} />
+          <img src="/icon5.svg" className={styles.icon} />
           <p>۲۱۵ سفارش</p>
           <span>لغو شده</span>
         </div>
         <div className={styles.orderItem}>
-          <FaEllipsisH className={styles.icon} />
-          <p>۴۵ سفارش</p>
-          <span>جاری</span>
+          <img src="/icon6.svg" className={styles.icon} />
+          <p>۲۸ محصول</p>
+          <span>فیزیکی</span>
         </div>
-
-        <div className={styles.orderItem}>
-          <FaCommentDots className={styles.icon} />
-          <p>۵۴ نظر</p>
-          <span>ثبت شده</span>
-        </div>
-      </div>
+    </div>
+    <h3 style={{whiteSpace:"nowrap"}} className={styles.categoriesTitle}>
+      علاقمندی های من
+            <p style={{whiteSpace:"nowrap",marginRight:"500px"}}>مشاهده بیشتر</p>
+            </h3>
+            <div className={styles.grid}>
+            
+            {Array.from({ length: 3 }).map((_, index) => (
+            <div key={index} className={styles.card}>
+                <img src="/sticker.svg" alt={product.title} className={styles.image} />
+                <h3 className={styles.title}>استیکر فرندز 
+                <img src="/Like2.svg" />
+                </h3>
+                <p>داری رنگ بندی،قابل طراحی</p>
+                {index === 1 ? (
+                <button className={styles.add}>
+                <img src='/add.svg' alt="add" />
+                افزودن به گالری
+                </button>
+                ) : (
+                <p className={styles.price}>{product.price} تومان</p>
+                )}
     </div>
 
-          {titles.map((title, index) => (
-            <div key={index}>
-              <h2>{title}</h2> 
-              <div className={styles.carouselcontainer}>
-                {favoriteItems.map((item) => (
-                  <div key={item.id} className={styles.carouselitem}>
-                    <img src={item.image} alt={item.title} />
-                    <h3>{item.title}</h3>
-                    <p>{item.description}</p>
-                    {item.price && <p className="price">{item.price}</p>}
-                  </div>
-                ))}
-              </div>
+  ))}
+                
             </div>
-          ))}
+            <h3 style={{whiteSpace:"nowrap"}} className={styles.categoriesTitle}>
+            خرید های پرتکرار من            
+            <p style={{whiteSpace:"nowrap",marginRight:"470px"}}>مشاهده بیشتر</p>
+            </h3>
+            <div className={styles.grid}>
+            
+            {Array.from({ length: 3 }).map((_, index) => (
+            <div key={index} className={styles.card}>
+                <img src="/hat.svg" alt={product.title} className={styles.image} />
+                <h3 className={styles.title}>کلاه مردانه
+                <img src="/Like.svg" />
+                </h3>
+                <p>داری رنگ بندی،قابل طراحی</p>
+                
+                <p className={styles.price}>{product.price} تومان</p>
+                
+    </div>
+
+  ))}
+                
+            </div>
+            <h3 style={{whiteSpace:"nowrap"}} className={styles.categoriesTitle}>
+              گالری من
+        <p style={{whiteSpace:"nowrap",marginRight:"580px"}}>مشاهده بیشتر</p>
+            </h3>
+            <div className={styles.grid}>
+            
+            {Array.from({ length: 3 }).map((_, index) => (
+            <div key={index} className={styles.card}>
+                <img src="/watermelon.svg" alt={product.title} className={styles.image} />
+                <h3 className={styles.title}>استیکر هندوانه 
+                <img src="/Like.svg" />
+                </h3>
+                <p>داری رنگ بندی،قابل طراحی</p>
+                
+                <button className={styles.add}>
+                <img src='/add.svg' alt="add" />
+                افزودن به گالری
+                </button>                
+    </div>
+
+  ))}
+                
+            </div>
+            
         </div>
-      </div>
+        
+    
+        </div>
       <Footer />
     </>
   );

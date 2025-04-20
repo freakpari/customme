@@ -116,87 +116,131 @@
 
   }
 
-  
-  .contentSection {
-    flex: 1;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-  }
-  
-  .card {
-    background:  variables.$tint-1;
-    border-radius: 16px;
-    padding: 1rem;
-  }
+
   .favoritescarousel{
     border: 1px solid variables.$gray-3;
     border-radius: 16px;
     width: 808px;
-    height: 1666px;
+    height: 1740px;
     margin-top: 97px;
     margin-right: 24px;
+
   }
-  .carouselcontainer{  
-      display: flex;
-      flex-direction: row;
-      margin-right: 24px;
-  }
-  .carouselitem{
-    width: 288px;
-    height: 389px;
-    img{
-      width: 256px;
-      height: 209px;
-      border-radius: 8px;
-    }
-  }
-  .lable{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .ordersContainer {
-    display: flex;
-    background:  variables.$tint-1;
-    padding: 20px;
-    border-radius: 12px;
-    text-align: right;
-    direction: rtl;
-    max-width: 800px;
-    margin: auto;
-  }
+
   
-  .title {
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 15px;
-  }
+  
+
   
   .orderRow{
-    display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 10px;
+    right : 0 ;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 700px;
+    margin-right: 20px;
   }
   
   .orderItem {
-    background: #f9f9f9;
+    display: flex;
     padding: 15px;
-    border-radius: 10px;
     text-align: center;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    transition: 0.3s ease;
+    margin-left: 180px;
+    white-space: nowrap;
+    height: 50px;
+    span{
+      font-size: 12px;
+      margin-top: 40px;
+      margin-right: -55px;
+    }
     
-    &:hover {
-      background: #f1f1f1;
+  
+  }
+
+  .categoriesTitle {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 28px;
+    width: 1224px;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    line-height: 140%;
+    color: variables.$gray-10;
+    p{
+      font-size: 14px;
+      color: variables.$primary-color;
+      margin-right: 15px;
+    }
+    
+
+  }
+
+  .grid {
+    display: grid;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    padding: 10px;
+    margin-right: 5px;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  
+    &::-webkit-scrollbar {
+      display: none; /* Chrome, Safari */
+    }
+
+  }
+  
+  .card {
+    border: 1px solid variables.$gray-5 ;
+    border-radius: 16px;
+    padding: 15px;
+    text-align: center;
+    background:variables.$tint-1;
+    width: 258px;
+    height: 352px;
+
+    p{
+      font-size: 14;
+      margin-right: -80px;
     }
   }
   
-  .icon {
-    font-size: 24px;
-    margin-bottom: 8px;
-    color: #c00;
+  .image {
+    width: 256px;
+    height: 209px;
+    border-radius: 8px;
+  }
+  
+  .title {
+    font-size:16px;
+    margin: 10px 0;
+    font-weight: bold;
+    display: flex;
+    gap: 145px;
+    white-space: nowrap;
+
+  }
+  
+  .price {
+    font-size: 14px;
+    color:variables.$shade-1;
+    font-weight: bold;
+    float: left;
+  }
+  .add{
+    width: 246px;
+    height:35px;
+    background-color: variables.$tint-1;
+    border: 1px solid variables.$primary-color;
+    border-radius:8px;
+    display: flex;
+    align-items: center;
+    color: variables.$primary-color;
+    justify-content: center;
+    
   }
