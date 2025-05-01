@@ -1,0 +1,98 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal {
+    background: #fff;
+    width: 511px;
+    height: 571px;
+    max-width: 50%;
+    padding: 2rem;
+    border-radius: 10px;
+    position: relative;
+    direction: rtl;
+  }
+  label{
+    color: #CBCBCB;
+    margin-right: -389px;
+  }
+  
+  .closeButton {
+    position: absolute;
+    left: 1rem;
+    top: 35px;
+    background: none;
+    border: none;
+    width: 24px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .stars{
+    margin-right: 2px;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .stars span {
+    font-size: 25px;
+    cursor: pointer;
+    color: gold;
+    margin: 0 1.5px;
+  }
+  .header{
+    color: #434343 !important;
+
+  }
+  
+  input, textarea {
+    width: 392px;
+    height: 20px;
+    margin: 10px 0;
+    padding: 0.5rem;
+    border: 1px solid #ddd !important;
+    margin-right: 30px;
+    border-radius: 5px;
+  }
+  
+  .submitButton {
+    width: 412px !important;
+    height: 40px;
+    background-color: #A72F3B;
+    color: white !important;
+    padding: 0.7rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-right: 30px !important;
+    cursor: pointer;
+  }
+  
+  .tagInput div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 5px;
+  }
+  
+  .proTag {
+    background: #e0f2f1;
+    color: #00796b;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+  
+  .conTag {
+    background: #ffebee;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+  

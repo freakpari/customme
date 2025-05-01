@@ -27,7 +27,7 @@ const orders = [
 ];
 
 export default function OrderHistory  () {
-    const [activeTab, setActiveTab] = useState("جاری");
+    const [activeTab, setActiveTab] = useState("جاری ۲");
     const tabs = ["جاری ۲", " تحویل شده ۲۶", "مرجوع شده ۴", "لغو شده ۴"];
 
     return (

@@ -3,6 +3,9 @@ import { FaStar} from "react-icons/fa";
 import Navbar from '../component/Navbar';
 import MainMenu from '../component/MainMenu';
 import Footer from '../component/Footer';
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import ReviewModal from '../component/ReviewModal';
 
 interface Review {
   id: number;
@@ -50,6 +53,14 @@ const reviews: Review[] = [
   },
 ];
 export default function Selectedproduct () {
+  const [allReviews, setAllReviews] = useState<Review[]>(reviews);
+  const [showModal, setShowModal] = useState(false);
+
+  const handleAddReview = (review: Review) => {
+    setAllReviews([review, ...allReviews]);
+  };
+
+
   return (
     <>
     <Navbar />
@@ -74,9 +85,12 @@ export default function Selectedproduct () {
           <button className={styles.addtopersonal} >
               <img src='/magic.svg' alt='magic icon' />
               شخصی سازی محصول</button>
+
+              <Link to="/cart" >
             <button className={styles.addToCart}>
               <img src='/shopping.svg' alt='shop icon' />
               افزودن به سبد</button>
+              </Link>
               </div>
 
           </div>
@@ -102,12 +116,15 @@ export default function Selectedproduct () {
             <p>از مجموع ۱۲۰ امتیاز </p>
           </div>
           <p>نظر خود را ثبت کنید</p>
-          <button>ثبت دیدگاه</button>
+          {showModal && (
+    <ReviewModal onClose={() => setShowModal(false)} onSubmit={handleAddReview} />
+  )}
+          <button onClick={() => setShowModal(true)}>ثبت دیدگاه</button>
         </div>
         </div>
         
         <div className={styles.reviewsContainer}>
-      {reviews.map((review) => (
+      {allReviews.map((review) => (
         <div key={review.id} className={styles.reviewCard}>
           <div className={styles.header}>
             <span className={styles.date}>{review.date}</span>
