@@ -7,6 +7,7 @@ import ShoppingCard from "./pages/shoppingcard";
 import Selectedproduct from "./pages/SelectedProduct";
 import OtherProduct from "./pages/OtherProduct";
 import OrderHistory from "./pages/OrderHistory";
+import Login from "./pages/login";
 import AccountInfo from "./pages/AccountInfo";
 function App() {
   return (
@@ -20,8 +21,10 @@ function App() {
         <Route path="/otherproduct" element={<OtherProduct />} />
         <Route path="/orderhistory" element={<OrderHistory />} />
         <Route path="/accountinfo" element={<AccountInfo />} />
+        <Route path="/login" element={<Login />} />
 
-      </Routes>
+
+    </Routes>
   </Router>
   );
 }
