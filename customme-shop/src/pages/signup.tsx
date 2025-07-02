@@ -1,72 +1,79 @@
-import React, { useState } from "react";
-import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
+import { useState } from "react";
 import styles from "../styles/signup.module.scss";
 import Footer from "../component/Footer";
 import Navbar from "../component/Navbar";
+import IsMobile from "../../hooks/mobile";
 
-
-const libraries = ["places"] as const;
-const mapContainerStyle = {
-  width: '600px',
-  height: '300px',
-  marginTop: '32px',  
-
-  
-};
-const center = {
-  lat: 32.6546,    
-  lng: 51.6679,
-};
 export default function Signup() {
+  const isMobile = IsMobile();
+
   const [formData, setFormData] = useState({
-    fullName: "",
-    nationalId: "",
+    full_name: "",
+    national_code: "",
     education: "",
     job: "",
     email: "",
     password: "",
-    birthDate: "",
-    city:"",
-    PhoneNumber:"",
-    zipcode:"",
-    address:"",
-    location: { lat: 35.6892, lng: 51.389 }, 
+    birth_date: "",
+    province:"",
+    city: "",
+    phone: "",
+    mobile: "",
+    postal_code: "",
+    full_address: "",
 
   });
+
   const [step, setStep] = useState(1);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleNextStep = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleNextStep = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (step === 1 && formData.fullName && formData.nationalId) {
-      setStep(step + 1);
+
+    if (step === 1 && formData.full_name && formData.national_code) {
+      setStep(2);
     } else if (step === 1) {
       alert("لطفا تمام فیلدهای اجباری را پر کنید");
-    } else if (step === 2 && formData.email && formData.password) {
-      console.log("فرم ثبت شد:", formData);
+    } else if (
+        step === 2 &&
+        formData.email &&
+        formData.password &&
+        formData.mobile &&
+        formData.phone
+    ) {
+      try {
+        const response = await fetch("http://127.0.0.1:8000/api/register/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          alert("ثبت‌نام با موفقیت انجام شد");
+        } else {
+          const errorMessages = Object.values(data).flat().join("\n");
+          alert("خطا:\n" + errorMessages);
+        }
+      } catch (err) {
+        console.error("خطای ارتباط با سرور:", err);
+        alert("خطایی رخ داد. لطفاً بعداً تلاش کنید.");
+      }
     } else {
       alert("لطفا تمام فیلدهای اجباری را پر کنید");
     }
   };
-  const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: 'AIzaSyBmi8seMOLNd6m2qeOw89AzaSenwT7-W-M',
-    libraries,
-  });
-  if (loadError) {
-    return <div>Error loading maps</div>;
-  }
 
-  if (!isLoaded) {
-    return <div>Loading maps</div>;
-  }
-  
 
   return (
-    <div>
-      <Navbar />
+    <div >
+      {!isMobile && <Navbar />}
       {step === 1 && ( 
         <img className={styles.stepper} src="/Stepper.svg" alt="stepper" />
       )}
@@ -83,11 +90,11 @@ export default function Signup() {
               <div className={styles.row}>
                 <div className={styles.inputGroup}>
                   <label>نام و نام خانوادگی</label>
-                  <input type="text" name="fullName" value={formData.fullName} onChange={handleChange} />
+                  <input type="text" name="full_name" value={formData.full_name} onChange={handleChange} />
                 </div>
                 <div className={styles.inputGroup}>
                   <label>کد ملی</label>
-                  <input type="text" name="nationalId" value={formData.nationalId} onChange={handleChange} />
+                  <input type="text" name="national_code" value={formData.national_code} onChange={handleChange} />
                 </div>
               </div>
               <div className={styles.row}>
@@ -95,20 +102,20 @@ export default function Signup() {
                   <label>تحصیلات (اختیاری)</label>
                   <select name="education" value={formData.education} onChange={handleChange}>
                     <option value="">انتخاب کنید</option>
-                    <option value="diploma">دیپلم</option>
-                    <option value="bachelor">کارشناسی</option>
-                    <option value="master">کارشناسی ارشد</option>
-                    <option value="phd">دکترا</option>
+                    <option value="دیپلم">دیپلم</option>
+                    <option value="کارشناسی">کارشناسی</option>
+                    <option value="کارشناسی ارشد">کارشناسی ارشد</option>
+                    <option value="دکترا">دکترا</option>
                   </select>
                 </div>
                 <div className={styles.inputGroup}>
                   <label>شغل (اختیاری)</label>
                   <select name="job" value={formData.job} onChange={handleChange}>
                     <option value="">انتخاب کنید</option>
-                    <option value="developer">برنامه‌نویس</option>
-                    <option value="designer">طراح</option>
-                    <option value="manager">مدیر</option>
-                    <option value="other">سایر</option>
+                    <option value="برنامه نویس">برنامه‌نویس</option>
+                    <option value="طراح">طراح</option>
+                    <option value="مدیر">مدیر</option>
+                    <option value="سایر">سایر</option>
                   </select>
                 </div>
               </div>
@@ -124,7 +131,7 @@ export default function Signup() {
         </div>
         <div className={styles.inputGroup}>
         <label>تاریخ تولد</label>
-          <input type="date" name="birthDate" value={formData.birthDate} onChange={handleChange} />
+          <input type="date" name="birth_date" value={formData.birth_date} onChange={handleChange} />
         </div>
               <button type="submit" className={styles.submitButton} >
                 مرحله بعدی
@@ -138,17 +145,17 @@ export default function Signup() {
               <div className={styles.row}>
                 <div className={styles.inputGroup}>
                   <label>شماره موبایل</label>
-                  <input type="text" name="phonenumber" value={formData.PhoneNumber} onChange={handleChange} />
+                  <input type="number" name="mobile" value={formData.mobile} onChange={handleChange} />
                 </div>
                 <div className={styles.inputGroup}>
                   <label> شماره تلفن(همراه با کد شهر)</label>
-                  <input type="text" name="phonenumber" value={formData.PhoneNumber} onChange={handleChange} />
+                  <input type="number" name="phone" value={formData.phone} onChange={handleChange} />
                 </div>
                 </div>
                 <div className={styles.row}>
               <div className={styles.inputGroup}>
               <label>استان</label>
-                  <select name="ciyt" value={formData.city} onChange={handleChange}>
+                  <select name="province" value={formData.province} onChange={handleChange}>
                     <option value="">انتخاب کنید</option>
                     <option value="tehran">تهران</option>
 
@@ -165,20 +172,11 @@ export default function Signup() {
               </div>
               <div className={styles.inputGroup}>
                   <label> کدپستی</label>
-                  <input type="text" name="zipcode" value={formData.zipcode} onChange={handleChange} />
+                  <input type="text" name="postal_code" value={formData.postal_code} onChange={handleChange} />
                 </div>
                 <div className={styles.address}>
                   <label> آدرس کامل کدپستی (میتوانید از نقشه استفاده کنید)</label>
-                  <input type="text" name="address" value={formData.address} onChange={handleChange} />
-                  <div>
-                  <GoogleMap
-                  mapContainerStyle={mapContainerStyle}
-                  zoom={50}
-                  center={center}
-                  >
-                  <Marker position={center} />
-                  </GoogleMap>
-                  </div>
+                  <input type="text" name="full_address" value={formData.full_address} onChange={handleChange} />
                 </div>
               <button type="submit" className={styles.submitButton} style={{ marginTop: "372px" }}>
                 ثبت اطلاعات
@@ -193,12 +191,12 @@ export default function Signup() {
           {step === 1 ? (
             <img src="/Photo.svg" className={styles.image} />
           ) : (
-            <img src="/Photo2.svg" className={styles.imagetwo} />
+            <img src="/Photo2.svg" className={styles.imageTwo}/>
           )}
         </div></div>
 
 
-      <Footer />
+      {!isMobile && <Footer />}
     </div>
   );
 }
