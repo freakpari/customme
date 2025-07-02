@@ -9,9 +9,7 @@
     left: 0;
     background: variables.$tint-1; 
     z-index: 1000; 
-    display: flex;
-    align-items: center;
-    padding-left: 108px; 
+    padding-left: 108px;
     padding-right: 108px; 
     box-sizing: border-box; 
     overflow-x: hidden;
@@ -23,7 +21,6 @@
   .navList {
     display: flex;
     list-style: none;
-    display: flex;
     gap: 16px;
     margin: 0;
   }
@@ -35,6 +32,7 @@
     align-items: center;
     gap: 8px;
     font-size: 16px;
+    text-decoration: none;
   }
   .listItem:hover {
     text-decoration: none;
@@ -43,39 +41,44 @@
   
 
   
-  
+
   .searchBox {
     position: relative;
     display: flex;
     align-items: center;
     width: 100%;
-    max-width: 600px; 
-    border: 1px solid variables.$gray-4;
+    max-width: 600px;
+    //border: 1px solid variables.$gray-4;
     border-radius: 25px;
     padding: 8px 16px;
     background: variables.$tint-1;
     margin-left: 76.54px;
   }
-  
+
   .icon {
     position: absolute;
-    left: 16px; 
+    left: 26px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: variables.$primary-color;
+    border: none;
   }
-  
+
   .searchInput {
     flex: 1;
     border: none;
     background: transparent;
     font-size: 16px;
-    text-align: right; 
+    text-align: right;
     outline: none;
-    color: variables.$primary-color; 
+    color: variables.$primary-color;
+    width: 596px;
+    height: 28px;
+    border-radius: 16px;
   }
-  
+
+
   .searchInput::placeholder {
     color: variables.$primary-color;
   }
