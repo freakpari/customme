@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "../styles/signup.module.scss";
 import Footer from "../component/Footer";
 import Navbar from "../component/Navbar";
-// import IsMobile from "../../hooks/mobile";
+import IsMobile from "../../hooks/mobile";
 
 export default function Signup() {
   const isMobile = IsMobile();
