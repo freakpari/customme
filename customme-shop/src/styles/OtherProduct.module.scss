@@ -1,4 +1,4 @@
-@use "variables.scss";
+@use "variables.scss" as variables ;
 
 .container {
     display: flex;
@@ -15,7 +15,7 @@
     margin-right: 108px;
     margin-top: 24px;
     h3{
-        color:variables.$gray-10;
+        color: variables.$tint-1;;
         font-size: 16px;
         line-height: 180%;
     }
@@ -79,11 +79,11 @@
   }
   
 .pagination .active {
-    background:variables.$tint-6;
+    background-color: variables.$tint-6;
     color: variables.$tint-1;
 }
 .card {
-    background:variables.$tint-1;
+    background-color: variables.$tint-1;;
     padding: 16px;
     border-radius: 16px;
     text-align: center;

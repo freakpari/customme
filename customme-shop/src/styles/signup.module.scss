@@ -153,3 +153,75 @@
     margin-bottom: 56px;
 
   }
+@media (max-width: 768px) {
+  .form {
+    width: 90%;
+    padding: 16px;
+    height: auto;
+    border-radius: 16px;
+  }
+
+  .form.step-2 {
+    width: 90%;
+    height: auto;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .inputGroup,
+  .inputGroup input,
+  .inputGroup select,
+  .address input {
+    width:320px;
+    height: 40px;
+  }
+
+  .address {
+    width: 100%;
+  }
+
+  .submitButton {
+    width: 100%;
+    margin: 16px auto;
+  }
+
+  .container {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    margin-right: 0;
+    gap: 0;
+  }
+
+  .imageContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .image,
+  .imageTwo {
+    width: 184px;
+    height: 184px;
+    margin: 24px auto;
+  }
+
+  .stepper {
+    width: 90%;
+    height: auto;
+    margin: 16px auto;
+  }
+
+  .title {
+    margin: 0 auto;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .mapContainerStyle {
+    width: 100%;
+  }
+}
+

@@ -1,5 +1,7 @@
-@use "variables.scss";
-  .banner {
+@use 'variables' as variables;
+
+
+.banner {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -166,11 +168,11 @@
     border-radius: 16px;
     padding: 15px;
     text-align: center;
-    background:variables.$tint-1;
+    background-color: variables.$tint-1;;
     width: 258px;
     height: 429px;
     p{
-      font-size: 14;
+      font-size: 14px;
       margin-right: 1px;
     }
   }
@@ -191,7 +193,7 @@
   
   .price {
     font-size: 20px;
-    color:variables.$shade-1;
+    color: variables.$tint-1;;
     font-weight: bold;
     float: left;
   }
@@ -310,7 +312,6 @@
     }
 
     .button {
-      border: none;
       padding: 8px 16px;
       border-radius: 5px;
       background-color: variables.$primary-color;
@@ -402,7 +403,7 @@
   }
   .startButton2 {
     background-color: variables.$primary-color;
-    color:variables.$tint-1 ;
+    color: variables.$tint-1; ;
     border: none;
     padding: 10px 15px;
     border-radius: 8px;
