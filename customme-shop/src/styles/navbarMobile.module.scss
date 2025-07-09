@@ -1,0 +1,55 @@
+@use 'variables.scss';
+.navbar{
+  width: 320px;
+  height:40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top:40px;
+  background: variables.$tint-1;
+  padding-left: 108px;
+  padding-right: 108px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+
+}
+.navbarLogo{
+  width: 24px;
+  height: 24px;
+}
+
+.searchBox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width:232px;
+  height: 32px;
+  max-width: 600px;
+  //border: 1px solid variables.$gray-4;
+  border-radius: 25px;
+  padding: 8px 16px;
+  background: variables.$tint-1;
+  margin-left: 76.54px;
+}
+
+.icon {
+  position: absolute;
+  left: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: variables.$primary-color;
+  border: none;
+}
+.searchInput {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  text-align: right;
+  outline: none;
+  color: variables.$primary-color;
+  width: 596px;
+  height: 28px;
+  border-radius: 16px;
+}

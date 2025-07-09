@@ -7,7 +7,6 @@ export default function Navbar() {
         <div className={styles.navbarLogo}>
             <Link to="/" >
             <img src="/LOGO.svg" alt="Logo 1" className={styles.logoImage} />
-            <img src="/castomme.svg" alt="Logo 2" className={styles.logoImage} />
             </Link>
 
         </div>

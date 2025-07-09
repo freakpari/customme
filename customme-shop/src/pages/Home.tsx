@@ -4,7 +4,9 @@ import styles from "../styles/Home.module.scss";
 import Fallowcard from '../component/Fallowcard';
 import Footer from '../component/Footer';
 import MainMenu from '../component/MainMenu';
-
+import IsMobile from "../../hooks/mobile";
+import NavbarMobile from "../component/NavbarMobile";
+import {Link} from "react-router-dom/dist";
 const categories = [
     { id: 1, name: "قاب موبایل", image: "/book.svg" },
     { id: 2, name: "کارت تبریک", image: "/book.svg" },
@@ -38,6 +40,7 @@ type CategoryProps = {
   
 
 export default function  Home ()  {
+ const ismobile = IsMobile();
 const product = {
         image: "tshirtred.svg",
         title: " تیشرت زنانه",
@@ -61,9 +64,10 @@ const popular = {
   };
     return (
     <div>
-        <Header />
-        <Navbar />
-        <MainMenu />
+        {!ismobile && <Header />}
+        {!ismobile &&  <Navbar />}
+        {!ismobile && <MainMenu /> }
+        {ismobile && <NavbarMobile />}
         <div className={styles.banner}>
         <div className={styles.bannerContent}>
         <div className={styles.title}>
@@ -252,7 +256,7 @@ const popular = {
             </div>
         ))}
         </div>
-        <Footer />
+        {!ismobile && <Footer /> }
             
     </div>
     

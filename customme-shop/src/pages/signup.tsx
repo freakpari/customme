@@ -70,6 +70,9 @@ export default function Signup() {
     }
   };
 
+  const handlePrevStep = () => {
+    setStep(1);
+  };
 
   return (
     <div >
@@ -80,16 +83,34 @@ export default function Signup() {
       {step === 2 && ( 
         <img className={styles.stepper} src="/Stepper2.svg" alt="stepper" />
       )}
+      {step === 1 && (
+          <img className={styles.steppermobile} src="/steppermobile1.svg" alt="stepper" />
+      )}
+      {step === 2 && (
+          <img className={styles.steppermobile} src="/Steppermobile2.svg" alt="stepper" />
+      )}
       <div className={styles.title}>
-      <h2 >فرم ثبت اطلاعات</h2>
+          <img src="/arrowr.svg" alt="arrow" className={styles.mobileOnly} />
+        <h2 className={styles.desktopOnly}>فرم ثبت اطلاعات</h2>
+        <p className={styles.mobileOnly}> فرم ثبت ‌نام</p>
       </div>
+      <div className={styles.line}></div>
+      {step === 1 && (
+          <>
+            <p className={styles.content}>اطلاعات کاربر</p>
+            <p className={styles.nextStep}>مرحله بعد: اطلاعات تماس</p>
+          </>
+      )}
+      {step === 2 && (
+          <p className={styles.content}>اطلاعات تماس</p>
+      )}
       <div className={styles.container}>
         <form className={`${styles.form} ${step === 2 ? styles["step-2"] : ""}`}  onSubmit={handleNextStep}>
           {step === 1 && (
             <>
               <div className={styles.row}>
                 <div className={styles.inputGroup}>
-                  <label>نام و نام خانوادگی</label>
+                  <label>نام و نام خانوادگی </label>
                   <input type="text" name="full_name" value={formData.full_name} onChange={handleChange} />
                 </div>
                 <div className={styles.inputGroup}>
@@ -101,7 +122,7 @@ export default function Signup() {
                 <div className={styles.inputGroup}>
                   <label>تحصیلات (اختیاری)</label>
                   <select name="education" value={formData.education} onChange={handleChange}>
-                    <option value="">انتخاب کنید</option>
+                    <option value="" >انتخاب کنید</option>
                     <option value="دیپلم">دیپلم</option>
                     <option value="کارشناسی">کارشناسی</option>
                     <option value="کارشناسی ارشد">کارشناسی ارشد</option>
@@ -170,18 +191,36 @@ export default function Signup() {
               </div>
               
               </div>
+              <div className={styles.row} >
               <div className={styles.inputGroup}>
                   <label> کدپستی</label>
                   <input type="text" name="postal_code" value={formData.postal_code} onChange={handleChange} />
                 </div>
-                <div className={styles.address}>
+                <div className={styles.inputGroup}>
                   <label> آدرس کامل کدپستی (میتوانید از نقشه استفاده کنید)</label>
                   <input type="text" name="full_address" value={formData.full_address} onChange={handleChange} />
                 </div>
-              <button type="submit" className={styles.submitButton} style={{ marginTop: "372px" }}>
-                ثبت اطلاعات
-                <img src="/arrow-left.svg" alt="arrow icon" />
-              </button>
+              </div>
+
+              {isMobile ? (
+                  <div className={styles.buttonGroup}>
+                    <button type="button" className={styles.backButton} onClick={handlePrevStep}>
+                      <img src="/arrow-right.svg" alt="arrow icon" />
+
+                      مرحله قبل
+                    </button>
+                    <button type="submit" className={styles.submitButton2}>
+                      ثبت اطلاعات
+                      <img src="/arrow-left.svg" alt="arrow icon" />
+                    </button>
+                  </div>
+              ) : (
+                  <button type="submit" className={styles.submitButton2}>
+                    ثبت اطلاعات
+                    <img src="/arrow-left.svg" alt="arrow icon" />
+                  </button>
+              )}
+
             </>
           )}
         </form>

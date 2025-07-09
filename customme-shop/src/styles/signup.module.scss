@@ -21,7 +21,7 @@
 
   }
   .form.step-2 {
-    height: 812px; 
+    height: 812px;
     width: 648px;
     margin-top: 24px;
 
@@ -29,6 +29,7 @@
   }
   .row {
     display: flex;
+    flex-direction: row;
     gap: 15px;
   }
   
@@ -50,6 +51,7 @@
       display: block;
       margin-bottom: 5px;
       font-weight: bold;
+      white-space: nowrap;
     }
   
     input {
@@ -69,7 +71,7 @@
 
   }
   
-  .submitButton {
+  .submitButton,.submitButton2 {
     width: 184px;
     height: 48px;
     padding: 8px 16px;
@@ -77,15 +79,13 @@
     color:#ffffff;
     border: none;
     border-radius: 8px;
-    margin-left: 24px;
-    margin-right: 440px;
-    margin-bottom: 24px;
-    margin-top: 20px;
+    margin: 20px 470px 24px 24px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
   }
+
 
   .container {
     display: flex;
@@ -120,7 +120,16 @@
     display: none;
   }
 }
+.steppermobile {
+  display: none;
 
+  @media (max-width: 768px) {
+    display: block;
+    float: left;
+    width: 68px;
+    height: 68px;
+  }
+}
   .address{
     width: 600px;
     height: 68px;
@@ -153,75 +162,273 @@
     margin-bottom: 56px;
 
   }
+.mobileOnly {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-left: 8px;
+  }
+}
+.line {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+    width: 100%;
+    height: 3px;
+    margin-top: 4px;
+    background-color: variables.$gray-3;
+
+  }
+}
+.backButton, .buttonGroup{
+  display: none;
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
+
+.mobileOnly {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
+.content{
+  display: none;
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
+.nextStep{
+  display: none;
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
+
+.desktopOnly {
+  display: block;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
+
+
   .form {
-    width: 90%;
-    padding: 16px;
-    height: auto;
+    width: 320px;
+    padding: 20px;
+    height: 684px;
     border-radius: 16px;
+    background: #fff;
+    margin: -50px -30px 62px 20px;
+
   }
 
   .form.step-2 {
-    width: 90%;
-    height: auto;
-  }
+    width: 320px;
+    padding: 20px;
+    height: 684px;
+    border-radius: 16px;
+    background: #fff;
+    margin: -50px -30px 62px 20px; }
 
   .row {
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
+    width: 320px;
   }
 
-  .inputGroup,
-  .inputGroup input,
-  .inputGroup select,
-  .address input {
-    width:320px;
-    height: 40px;
+  .inputGroup {
+
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 10px;
+
+    label {
+      font-size: 14px;
+      color: red;
+      font-weight: 500;
+      margin-bottom: 4px;
+      align-self: flex-start;
+      white-space: nowrap;
+    }
+
+    input {
+      width: 290px;
+      height: 40px;
+      padding: 8px;
+      font-size: 14px;
+      border-radius: 8px;
+      border: 1px solid variables.$gray-5;
+    }
+    select {
+      width: 310px;
+      height: 40px;
+      padding: 8px;
+      font-size: 14px;
+      border-radius: 8px;
+      border: 1px solid variables.$gray-5;
+
+    }
   }
 
-  .address {
-    width: 100%;
-  }
 
   .submitButton {
-    width: 100%;
-    margin: 16px auto;
+    width: 152px;
+    height: 48px;
+    margin: 10px 188px 72px 10px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: variables.$primary-color;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    gap: 8px;
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  .submitButton2 {
+    width: 152px;
+    height: 48px;
+    margin: 10px 10px 10px 10px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: variables.$primary-color;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    white-space: nowrap;
+    gap: 8px;
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
   }
 
   .container {
     flex-direction: column-reverse;
-    align-items: flex-start;
-    margin-right: 0;
+    align-items: center;
     gap: 0;
+    margin: 0 auto;
+    width: 100%;
   }
 
   .imageContainer {
     display: flex;
     justify-content: center;
     width: 100%;
+    margin-top: 24px;
   }
 
-  .image,
-  .imageTwo {
+  .image
+   {
     width: 184px;
     height: 184px;
-    margin: 24px auto;
+    margin:-10px 0 16px  65px;
+  }
+  .imageTwo{
+    width: 184px;
+    height: 184px;
+    margin:-10px 30px 16px  45px;
+
   }
 
   .stepper {
-    width: 90%;
-    height: auto;
-    margin: 16px auto;
+    display: none;
   }
 
+  .steppermobile {
+    display: block;
+    width: 68px;
+    height: 68px;
+    margin: 68px auto 0 20px;
+  }
+
+
   .title {
-    margin: 0 auto;
-    font-size: 16px;
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    width: 120px;
+    height: 22px;
+    margin-right:20px;
+    margin-top: 20px;
+    p{
+      font-size: 12px;
+      line-height: 180%;
+      color: variables.$gray-10;
+      width: 61px;
+      height: 22px;
+      white-space: nowrap;
+      margin-top: -1px;
+      letter-spacing: 0;
+      font-weight: 300;
+    }
+    img{
+      width: 20px;
+      height: 20px;
+    }
+
   }
 
   .mapContainerStyle {
     width: 100%;
+    height: 250px;
   }
-}
+  .content{
+    font-size: 16px;
+    color: variables.$gray-10;
+    line-height: 180%;
+    letter-spacing: 0;
+    margin-right: 20px;
+  }
+  .nextStep{
+    font-size: 12px;
+    color: variables.$gray-6;
+    line-height: 180%;
+    letter-spacing: 0;
+    margin-right: 20px;
 
+  }
+  .buttonGroup {
+    display: flex;
+    width: 100%;
+    padding: 0 20px;
+    margin-top: 16px;
+  }
+
+  .backButton {
+    width: 152px;
+    height: 48px;
+    margin: 10px 20px 5px 10px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: variables.$tint-1;
+    border: 1px solid variables.$primary-color;
+    border-radius: 8px;
+    color: variables.$primary-color;
+    white-space: nowrap;
+    gap: 8px;
+
+  }
+
+}

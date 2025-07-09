@@ -417,7 +417,15 @@
     margin-top: 24px;
 
   }
-
+.navbar{
+  display: none;
+}
+@media (max-width: 768px){
+  .banner{
+    width: 320px;
+    height: 317px;
+  }
+}
   
   
 
