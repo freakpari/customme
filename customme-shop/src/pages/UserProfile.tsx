@@ -2,16 +2,36 @@ import Footer from "../component/Footer";
 import MainMenu from "../component/MainMenu";
 import Navbar from "../component/Navbar";
 import Profile from "../component/Profile";
+import NavigationMobile from "../component/NavigationMobile.tsx";
 import styles from "../styles/UserProfile.module.scss";
 import { useEffect, useState } from "react";
 import IsMobile from "../../hooks/mobile.ts";
 
 
+interface UserStats {
+    current_orders: number;
+    delivered_orders: number;
+    gallery_products: number;
+    comments: number;
+    canceled_orders: number;
+    physical_products: number;
+}
+interface Product {
+    id?: number;
+    name: string;
+    price: string;
+    image: string;
+    description: string;
+}
+
+
+
+
 
 export default function UserProfile() {
-    const [userStats, setUserStats] = useState<any>(null);
-    const [products, setProducts] = useState([]);
-    const ismobile= IsMobile();
+    const [userStats, setUserStats] = useState<UserStats | null>(null);
+    const [products, setProducts] = useState<Product[]>([]);
+    const Ismobile= IsMobile();
     useEffect(() => {
         const token = localStorage.getItem("token");
 
@@ -46,7 +66,7 @@ export default function UserProfile() {
             .catch((err) => console.error("Error:", err));
     }, []);
 
-    const [profileData, setProfileData] = useState<any>(null);
+    // const [profileData, setProfileData] = useState<any>(null);
 
     const product = {
     title: " تیشرت زنانه",
@@ -55,8 +75,8 @@ export default function UserProfile() {
 
     return(
         <>
-        {!ismobile && <Navbar /> }
-        {!ismobile && <MainMenu />}
+        {!Ismobile && <Navbar /> }
+        {!Ismobile && <MainMenu />}
           <div className={styles.container}>
           <Profile />
           <div className={styles.favoritescarousel}>
@@ -87,7 +107,7 @@ export default function UserProfile() {
         </div>
 
         <div className={styles.orderItem}>
-          <img src="/icon5.svg"  />
+          <img src="/icon5.svg" alt="products icon"  />
             <p>{userStats?.canceled_orders ?? "..."} سفارش</p>
           <span>لغو شده</span>
         </div>
@@ -97,10 +117,10 @@ export default function UserProfile() {
           <span>فیزیکی</span>
         </div>
     </div>
-    <h3 style={{whiteSpace:"nowrap"}} className={styles.categoriesTitle}>
-      علاقمندی های من
-            <p style={{whiteSpace:"nowrap",marginRight:"500px"}}>مشاهده بیشتر</p>
-            </h3>
+              <div  className={styles.categoriesTitle}>
+                  <h3 style={{whiteSpace:"nowrap"}}>علاقه مندی های من</h3>
+                  <p style={{whiteSpace:"nowrap"}}>مشاهده بیشتر</p>
+              </div>
             <div className={styles.grid}>
 
                 {products.slice(0, 3).map((product, index) => (
@@ -114,7 +134,7 @@ export default function UserProfile() {
                             {product.name}
                             <img src="/Like2.svg" alt="like icon" />
                         </h3>
-                        <p>{product.description}</p>
+                        <p className={styles.desc}>{product.description}</p>
                         {index === 1 ? (
                             <button className={styles.add}>
                                 <img src="/add.svg" alt="add" />
@@ -127,39 +147,39 @@ export default function UserProfile() {
                 ))}
 
             </div>
-            <h3 style={{whiteSpace:"nowrap"}} className={styles.categoriesTitle}>
-            خرید های پرتکرار من
-            <p style={{whiteSpace:"nowrap",marginRight:"470px"}}>مشاهده بیشتر</p>
-            </h3>
+              <div  className={styles.categoriesTitle}>
+                  <h3 style={{whiteSpace:"nowrap"}}>خریدهای پرتکرار من</h3>
+                  <p style={{whiteSpace:"nowrap"}}>مشاهده بیشتر</p>
+              </div>
             <div className={styles.grid}>
 
             {Array.from({ length: 3 }).map((_, index) => (
             <div key={index} className={styles.card}>
                 <img src="/hat.svg" alt={product.title} className={styles.image} />
                 <h3 className={styles.title}>کلاه مردانه
-                <img src="/Like.svg" />
+                <img src="/Like.svg" alt="like icon" />
                 </h3>
-                <p>داری رنگ بندی،قابل طراحی</p>
+                <p className={styles.desc}>دارای رنگ بندی،قابل طراحی</p>
                 <p className={styles.price}>{product.price} تومان</p>
 
-    </div>
+           </div>
 
   ))}
 
             </div>
-            <h3 style={{whiteSpace:"nowrap"}} className={styles.categoriesTitle}>
-              گالری من
-        <p style={{whiteSpace:"nowrap",marginRight:"580px"}}>مشاهده بیشتر</p>
-            </h3>
+              <div  className={styles.categoriesTitle}>
+              <h3 style={{whiteSpace:"nowrap"}}>گالری من</h3>
+              <p style={{whiteSpace:"nowrap"}}>مشاهده بیشتر</p>
+              </div>
             <div className={styles.grid}>
 
             {Array.from({ length: 3 }).map((_, index) => (
             <div key={index} className={styles.card}>
                 <img src="/watermelon.svg" alt={product.title} className={styles.image} />
                 <h3 className={styles.title}>استیکر هندوانه
-                <img src="/Like.svg"  alt="like icon" />
+                 <img src="/Like.svg"  alt="like icon" />
                 </h3>
-                <p>داری رنگ بندی،قابل طراحی</p>
+                <p className={styles.desc} >داری رنگ بندی،قابل طراحی</p>
 
                 <button className={styles.add}>
                 <img src='/add.svg' alt="add" />
@@ -175,7 +195,8 @@ export default function UserProfile() {
 
 
         </div>
-            {!ismobile && <Footer />}
+            {!Ismobile && <Footer />}
+            {Ismobile && <NavigationMobile />}
     </>
   );
 }
