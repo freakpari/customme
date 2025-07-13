@@ -84,7 +84,7 @@ export default function Signup() {
         <img className={styles.stepper} src="/Stepper2.svg" alt="stepper" />
       )}
       {step === 1 && (
-          <img className={styles.steppermobile} src="/steppermobile1.svg" alt="stepper" />
+          <img className={styles.steppermobile} src="/Steppermobile1.svg" alt="stepper" />
       )}
       {step === 2 && (
           <img className={styles.steppermobile} src="/Steppermobile2.svg" alt="stepper" />

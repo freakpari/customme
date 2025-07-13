@@ -6,7 +6,6 @@ import Footer from '../component/Footer';
 import MainMenu from '../component/MainMenu';
 import IsMobile from "../../hooks/mobile";
 import NavbarMobile from "../component/NavbarMobile";
-import {Link} from "react-router-dom/dist";
 const categories = [
     { id: 1, name: "قاب موبایل", image: "/book.svg" },
     { id: 2, name: "کارت تبریک", image: "/book.svg" },
@@ -106,28 +105,35 @@ const popular = {
         ))}
         </div>
         </div>
-        <h3 style={{whiteSpace:"nowrap"}} className={styles.categoriesTitle}>
-        <img src="/medal.svg" alt="medal" />
-        پر فروش ترین ها
-            <div style={{width:"890px"}} className={styles.line}></div>
-            <p style={{whiteSpace:"nowrap"}}>مشاهده بیشتر</p>
-            </h3>
-        <div className={styles.grid}>
-            
-        {Array.from({ length: 8 }).map((_, index) => (
-        <div key={index} className={styles.card}>
-            <img src={product.image} alt={product.title} className={styles.image} />
-            <h3 className={styles.title}>{product.title}
-            <img src="/Like.svg" />
-            </h3>
-            <p>داری رنگ بندی،قابل طراحی</p>
+        <h3 style={{ whiteSpace: "nowrap" }} className={styles.categoriesTitle}>
+            <img src="/medal.svg" alt="medal" />
+            پر فروش ترین ها
+            <div style={{ width: "890px" }} className={styles.line}></div>
+            <p style={{ whiteSpace: "nowrap" }}>مشاهده بیشتر</p>
+        </h3>
 
-            <p className={styles.price}>{product.price} تومان</p>
-        
+        <div className={styles.grid}>
+            {(ismobile
+                    ? Array.from({ length: 4 }) // موبایل: فقط ۴ تا
+                    : Array.from({ length: 8 }) // دسکتاپ: ۸ تا
+            ).map((_, index) => (
+                <div key={index} className={styles.card}>
+                    <img
+                        src={product.image}
+                        alt={product.title}
+                        className={styles.image}
+                    />
+                    <h3 className={styles.title}>
+                        {product.title}
+                        <img src="/Like.svg" />
+                    </h3>
+                    <p>داری رنگ بندی،قابل طراحی</p>
+                    <p className={styles.price}>{product.price} تومان</p>
+                </div>
+            ))}
         </div>
-    ))}
-    </div>
-    <h3 style={{whiteSpace:"nowrap"}} className={styles.categoriesTitle}>
+
+        <h3 style={{whiteSpace:"nowrap"}} className={styles.categoriesTitle}>
         <img src="/discountshape.svg" alt="discountshape" />
         فروش ویژه  
           <div style={{width:"990px"}} className={styles.line}></div>
@@ -154,8 +160,11 @@ const popular = {
             <p style={{whiteSpace:"nowrap"}}>مشاهده بیشتر</p>
             </h3>
     <div className={styles.grid}>
-            
-        {Array.from({ length: 8 }).map((_, index) => (
+
+        {(ismobile
+                ? Array.from({ length: 4 }) // موبایل: فقط ۴ تا
+                : Array.from({ length: 8 }) // دسکتاپ: ۸ تا
+        ).map((_, index) => (
         <div key={index} className={styles.card}>
             <img src={popular.image} alt={popular.title} className={styles.image} />
             <h3 className={styles.title}>{popular.title}

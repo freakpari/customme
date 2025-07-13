@@ -1,4 +1,5 @@
 @use 'variables.scss';
+
 .navbar{
   width: 320px;
   height:40px;
@@ -7,10 +8,9 @@
   align-items: center;
   margin-top:40px;
   background: variables.$tint-1;
-  padding-left: 108px;
-  padding-right: 108px;
   box-sizing: border-box;
   overflow-x: hidden;
+  margin-right: 40px;
 
 }
 .navbarLogo{

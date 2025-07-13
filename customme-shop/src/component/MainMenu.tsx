@@ -1,4 +1,4 @@
-import styles from "../styles/MainMenu.module.scss";
+import styles from "../styles/mainMenu.module.scss";
 import React from "react";
 import { useState } from "react";
 import CaseModal from "./CaseModal";

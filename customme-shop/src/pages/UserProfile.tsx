@@ -4,15 +4,14 @@ import Navbar from "../component/Navbar";
 import Profile from "../component/Profile";
 import styles from "../styles/UserProfile.module.scss";
 import { useEffect, useState } from "react";
-
-
+import IsMobile from "../../hooks/mobile.ts";
 
 
 
 export default function UserProfile() {
     const [userStats, setUserStats] = useState<any>(null);
     const [products, setProducts] = useState([]);
-
+    const ismobile= IsMobile();
     useEffect(() => {
         const token = localStorage.getItem("token");
 
@@ -56,11 +55,10 @@ export default function UserProfile() {
 
     return(
         <>
-          <Navbar />
-          <MainMenu />
+        {!ismobile && <Navbar /> }
+        {!ismobile && <MainMenu />}
           <div className={styles.container}>
           <Profile />
-
           <div className={styles.favoritescarousel}>
           <div>
       <h2 className={styles.categoriesTitle}>سفارشات من</h2>
@@ -68,22 +66,22 @@ export default function UserProfile() {
       <div className={styles.orderRow}>
 
       <div className={styles.orderItem}>
-          <img src="/icon1.svg"  />
+          <img src="/icon1.svg"  alt='order icon'/>
           <p>{userStats?.current_orders ?? "..." } سفارش</p>
           <span>جاری</span>
         </div>
         <div className={styles.orderItem}>
-          <img src="/icon2.svg"  />
+          <img src="/icon2.svg"  alt='order icon' />
             <p>{userStats?.delivered_orders ?? "..."} سفارش</p>
           <span>ارسال شده</span>
         </div>
         <div className={styles.orderItem}>
-          <img src="/icon3.svg"  />
+          <img src="/icon3.svg"  alt='order icon'/>
             <p>{userStats?.gallery_products ?? "..."} محصول</p>
           <span>در گالری</span>
         </div>
         <div className={styles.orderItem}>
-          <img src="/icon4.svg"  />
+          <img src="/icon4.svg"  alt='comment icon' />
             <p>{userStats?.comments ?? "..."} نظر</p>
           <span>ثبت شده</span>
         </div>
@@ -94,7 +92,7 @@ export default function UserProfile() {
           <span>لغو شده</span>
         </div>
         <div className={styles.orderItem}>
-          <img src="/icon6.svg" />
+          <img src="/icon6.svg"  alt="products icon"/>
             <p>{userStats?.physical_products ?? "..."} محصول</p>
           <span>فیزیکی</span>
         </div>
@@ -114,7 +112,7 @@ export default function UserProfile() {
                         />
                         <h3 className={styles.title}>
                             {product.name}
-                            <img src="/Like2.svg" />
+                            <img src="/Like2.svg" alt="like icon" />
                         </h3>
                         <p>{product.description}</p>
                         {index === 1 ? (
@@ -142,7 +140,6 @@ export default function UserProfile() {
                 <img src="/Like.svg" />
                 </h3>
                 <p>داری رنگ بندی،قابل طراحی</p>
-
                 <p className={styles.price}>{product.price} تومان</p>
 
     </div>
@@ -160,7 +157,7 @@ export default function UserProfile() {
             <div key={index} className={styles.card}>
                 <img src="/watermelon.svg" alt={product.title} className={styles.image} />
                 <h3 className={styles.title}>استیکر هندوانه
-                <img src="/Like.svg" />
+                <img src="/Like.svg"  alt="like icon" />
                 </h3>
                 <p>داری رنگ بندی،قابل طراحی</p>
 
@@ -178,7 +175,7 @@ export default function UserProfile() {
 
 
         </div>
-      <Footer />
+            {!ismobile && <Footer />}
     </>
   );
 }

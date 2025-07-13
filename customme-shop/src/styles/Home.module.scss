@@ -161,6 +161,7 @@
     width: 1224px;
     margin-right: 92px;
     margin-top: 50px;
+
   }
   
   .card {
@@ -420,15 +421,175 @@
 .navbar{
   display: none;
 }
-@media (max-width: 768px){
-  .banner{
-    width: 320px;
-    height: 317px;
+@media (max-width: 768px) {
+  @media (max-width: 768px) {
+    .banner {
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+      margin: 20px auto;
+      padding: 16px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .bannerImage {
+      order: -1;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .bannerImage img {
+      width: 100%;
+      max-width: 320px;
+      height: auto;
+    }
+
+    .bannerContent {
+      width: 100%;
+      height: auto;
+      align-items: center;
+      text-align: center;
+      margin-top: 20px;
+      padding: 0 16px;
+    }
+
+    .title h2 {
+      margin-right: 0;
+      width: auto;
+      font-size: 24px;
+      white-space: normal;
+    }
+
+    .description {
+      width: 100%;
+      height: auto;
+      margin: 16px 0;
+      padding: 0;
+      font-size: 16px;
+      line-height: 160%;
+      text-align: justify;
+    }
+
+    .buttons {
+      gap: 4px;
+      align-items: center;
+      width: 320px;
+      margin-right: 20px;
+    }
+
+    .startButton,
+    .viewProducts {
+      width: 90%;
+      font-size: 16px;
+      padding: 12px 0;
+    }
+  }
+  .categoryItem{
+    width: 68px;
+    height: 64px;
+  }
+
+  .categoriesTitle {
+
+
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    width: 127px;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    margin-right: 10px;
+    line-height: 140%;
+    color: variables.$gray-10;
+    margin-top: 42px;
+  white-space: nowrap;
+  }
+  .categoryImage{
+    width: 60px;
+    height: 32px;
+  }
+  .categoryName{
+    width: 46px;
+    height: 18px;
+    font-size: 10px;
+    white-space: nowrap;
+  }
+.categoriesList{
+  margin-right: 10px;
+  height: auto;
+  width: 680px;
+}
+  .grid{
+    grid-template-columns: repeat(2, 1fr); // دو ستون برای موبایل و تبلت
+    gap: 6px;
+    width: auto;
+    margin-right: -10px;
+  }
+  .card{
+    width: 142px;
+    height: 244px;
+  }
+  .image{
+    width: 96px;
+    height: 96px;
+  }
+  .title{
+    display: flex;
+    gap: 20px;
+
+  }
+
+  .gridtwo {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    width: 360px;
+    margin-right: -10px;
+  }
+  .discountcard{
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    border-radius: 16px;
+    overflow: hidden;
+    width: 68px;
+    height: 64px;
+    display: flex;
+    padding: 16px;
+    color: variables.$tint-1;
+    font-weight: bold;
+
+  }
+  .badge {
+    position: absolute;
+    top:-10px;
+    left: 0;
+    color: variables.$tint-1;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+  }
+
+  .badgeIcon {
+    width: 19px;
+    height: 36px;
+  }
+
+  .titletwo {
+    font-size: 1.2rem;
+  }
+
+  .large {
+    grid-column: span 2;
+    grid-row: span 2;
+    width: 152px;
+    height: 134px;
+    margin-top: 20px;
   }
 }
-  
-  
-
-  
-
-
