@@ -14,12 +14,12 @@ return(
     </div>
 
     <div className={styles.searchBox}>
-        <div className={styles.icon}>
-            <img src='/search.svg' alt='search icon' />
-        </div>
-        <input type="text" className={styles.searchInput} placeholder="جستجو" />
+        <input type="text" className={styles.searchInput} placeholder="جستجو در"/>
+        <img src='/lo.svg' alt="Logo 2"  className={styles.logoTwo} />
+        <img src='/search.svg' alt='search icon' className={styles.icon}/>
+
     </div>
-    <div className={styles.navbarLogo}>
+    <div className={styles.Logo}>
         <Link to="/" >
             <img src="/LOGO.svg" alt="Logo 1"  />
         </Link>
