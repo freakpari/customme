@@ -6,6 +6,8 @@ import Footer from '../component/Footer';
 import MainMenu from '../component/MainMenu';
 import IsMobile from "../../hooks/mobile";
 import NavbarMobile from "../component/NavbarMobile";
+import {useRef} from "react";
+import NavigationMobile from "../component/NavigationMobile";
 const categories = [
     { id: 1, name: "قاب موبایل", image: "/book.svg" },
     { id: 2, name: "کارت تبریک", image: "/book.svg" },
@@ -36,10 +38,12 @@ type CategoryProps = {
     { title: "استیکر", image: "/school.svg",  },
     { title: "دیجیتال", image: "/school.svg" },
   ];
-  
+
+
+
 
 export default function  Home ()  {
- const ismobile = IsMobile();
+const ismobile = IsMobile();
 const product = {
         image: "tshirtred.svg",
         title: " تیشرت زنانه",
@@ -61,6 +65,21 @@ const popular = {
       "/design3.svg",
     ],
   };
+    const scrollRef = useRef<HTMLDivElement>(null);
+    const handleScrollLeft = () => {
+        if (scrollRef.current) {
+            scrollRef.current.scrollLeft -= 50;
+        }
+    };
+
+    const handleScrollRight = () => {
+        if (scrollRef.current) {
+            console.log('scrollLeft before:', scrollRef.current.scrollLeft);
+            scrollRef.current.scrollLeft += 60;
+            console.log('scrollLeft after:', scrollRef.current.scrollLeft);
+        }
+    };
+
     return (
     <div>
         {!ismobile && <Header />}
@@ -84,19 +103,25 @@ const popular = {
         <button className={styles.viewProducts}>دیدن محصولات</button>
         </div>
         </div>
-
     <div className={styles.bannerImage}>
         <img src="/banner.svg" alt="Custom Shop" />
     </div>
     </div>
     <div className={styles.categories}>
-        <h3 className={styles.categoriesTitle}>
+        <h3 style={{whiteSpace:"nowrap"}} className={styles.categoriesTitle}>
         <img src="/medal.svg" alt="medal" />
-            دسته بندی محصولات 
+            دسته بندی محصولات
             <div className={styles.line}></div>
-            <p>مشاهده بیشتر</p>
-            </h3>
-        <div className={styles.categoriesList}>
+        </h3>
+        {!ismobile ? (
+            <p style={{color:"#A72F3B",marginRight:"1240px",whiteSpace:"nowrap",marginTop:"-47px",fontWeight:"bold",fontSize:"14px"}}>مشاهده بیشتر</p>
+        ) : (
+            <div className={styles.flashes}>
+                <img src="/flash-l.svg"  alt="flash-l" onClick={handleScrollLeft} />
+                <img src="/flash-r.svg" alt="flash-r" onClick={handleScrollRight} />
+            </div>
+        )}
+        <div className={styles.categoriesList} ref={scrollRef}>
         {categories.map((category) => (
             <div key={category.id} className={styles.categoryItem}>
                 <img src={category.image} alt={category.name} className={styles.categoryImage} />
@@ -109,13 +134,13 @@ const popular = {
             <img src="/medal.svg" alt="medal" />
             پر فروش ترین ها
             <div style={{ width: "890px" }} className={styles.line}></div>
-            <p style={{ whiteSpace: "nowrap" }}>مشاهده بیشتر</p>
+            <p  className={styles.show} style={{ whiteSpace: "nowrap" }}>مشاهده بیشتر</p>
         </h3>
 
         <div className={styles.grid}>
             {(ismobile
-                    ? Array.from({ length: 4 }) // موبایل: فقط ۴ تا
-                    : Array.from({ length: 8 }) // دسکتاپ: ۸ تا
+                    ? Array.from({ length: 4 })
+                    : Array.from({ length: 8 })
             ).map((_, index) => (
                 <div key={index} className={styles.card}>
                     <img
@@ -137,7 +162,7 @@ const popular = {
         <img src="/discountshape.svg" alt="discountshape" />
         فروش ویژه  
           <div style={{width:"990px"}} className={styles.line}></div>
-            <p style={{whiteSpace:"nowrap"}}>مشاهده بیشتر</p>
+            <p style={{whiteSpace:"nowrap",marginRight:"150px"}}>مشاهده بیشتر</p>
             </h3>
     <div className={styles.gridtwo}>
       {discount.map((category, index) => (
@@ -157,13 +182,13 @@ const popular = {
         <img src="/likeshapes.svg" alt="discountshape" />
         طرح های پرطرفدار
           <div style={{width:"990px"}} className={styles.line}></div>
-            <p style={{whiteSpace:"nowrap"}}>مشاهده بیشتر</p>
+            <p className={styles.show} style={{whiteSpace:"nowrap"}}>مشاهده بیشتر</p>
             </h3>
     <div className={styles.grid}>
 
         {(ismobile
-                ? Array.from({ length: 4 }) // موبایل: فقط ۴ تا
-                : Array.from({ length: 8 }) // دسکتاپ: ۸ تا
+                ? Array.from({ length: 4 })
+                : Array.from({ length: 8 })
         ).map((_, index) => (
         <div key={index} className={styles.card}>
             <img src={popular.image} alt={popular.title} className={styles.image} />
@@ -185,10 +210,14 @@ const popular = {
         <img src="/star.svg" style={{width:"30px"}} alt="star" />
         طراحان برتر
           <div style={{width:"990px"}} className={styles.line}></div>
-            <p style={{whiteSpace:"nowrap"}}>مشاهده بیشتر</p>
+            <p style={{whiteSpace:"nowrap",marginRight:"140px"}}>مشاهده بیشتر</p>
             </h3>
     <div className={styles.fallow}>
-      {Array.from({ length: 8 }).map((_, index) => (
+
+        {(ismobile
+                ? Array.from({ length: 4 })
+                : Array.from({ length: 8 })
+        ).map((_, index) => (
         <Fallowcard key={index} {...profileData} />
       ))}
     </div>
@@ -196,15 +225,17 @@ const popular = {
       <div className={styles.cardtwo}>
         <div className={styles.gifttext} >
           <h3>محصولات مناسب هدیه دادن به خانم‌ها</h3>
-          <button className={styles.button}>دیدن محصولات</button>
+            {!ismobile && <button className={styles.button}>دیدن محصولات</button>}
+            {ismobile && <p> دیدن محصولات</p>}
           </div>
-          <img className={styles.giftpic} src="/gift.svg" alt="هدیه برای خانم‌ها" />
+          <img className={styles.giftpic} src="/gift2.svg" alt="هدیه برای خانم‌ها" />
 
       </div>
       <div className={styles.cardtwo}>
         <div className={styles.gifttext}>
           <h3>محصولات مناسب هدیه دادن به آقایان</h3>
-          <button className={styles.button}>دیدن محصولات</button>
+            {!ismobile && <button className={styles.button}>دیدن محصولات</button>}
+            {ismobile && <p> دیدن محصولات</p>}
           </div>
           <img className={styles.giftpic} src="/gift.svg" alt="هدیه برای آقایان" />
 
@@ -218,8 +249,11 @@ const popular = {
         <img src='/lbag.svg' />
 
       </div>
-            
-        {Array.from({ length: 7 }).map((_, index) => (
+
+        {(ismobile
+                ? Array.from({ length: 4 })
+                : Array.from({ length: 7 })
+        ).map((_, index) => (
         <div key={index} className={styles.card}>
             <img src="/totbag.svg" alt={popular.title} className={styles.image} />
             <h3 className={styles.title}>کیف زنانه
@@ -248,7 +282,7 @@ const popular = {
         <img src="/fav.svg" alt="star" />
         علاقمندی ها
           <div style={{width:"990px"}} className={styles.line}></div>
-            <p style={{whiteSpace:"nowrap"}}>مشاهده بیشتر</p>
+            <p style={{whiteSpace:"nowrap",marginRight:"130px"}}>مشاهده بیشتر</p>
             </h3>
             <div className={styles.grid}>
             
@@ -266,7 +300,7 @@ const popular = {
         ))}
         </div>
         {!ismobile && <Footer /> }
-            
+        {ismobile && <NavigationMobile />}
     </div>
     
     

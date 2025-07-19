@@ -111,14 +111,12 @@
       color: variables.$primary-color;
       margin-right: 15px;
     }
-    
-
   }
   .line {
     width: 841px;
     height: 1px;
     background-color: variables.$gray-4;
-    margin-right: 15px;
+    margin-right: 50px;
 }
 
   
@@ -130,6 +128,7 @@
     width: 1224px;
     height: 128px;
     margin-right: 100px;
+
   }
   .categoryItem {
     background: variables.$tint-1;
@@ -194,7 +193,7 @@
   
   .price {
     font-size: 20px;
-    color: variables.$tint-1;;
+    color: #000000;
     font-weight: bold;
     float: left;
   }
@@ -300,10 +299,6 @@
   cursor: pointer;
   background-color: variables.$tint-5;
 
-
-
-
-
     h3 {
       font-size: 25px;
       margin-bottom: 24px;
@@ -335,8 +330,8 @@
     width: 286px;
     height:188px;
     object-fit: cover;
-    margin-right: 300px;
-    margin-top: -155px;
+    margin-right: 400px;
+    margin-top: -170px;
 }
 .heading{
   font-size: 24px;
@@ -421,12 +416,18 @@
 .navbar{
   display: none;
 }
+
+
+
 @media (max-width: 768px) {
-  @media (max-width: 768px) {
-    .banner {
+  html, body {
+    overflow-x: hidden;
+  }
+
+   .banner {
       flex-direction: column;
-      width: 100%;
-      height: auto;
+      width: 310px;
+      height: 317px;
       margin: 20px auto;
       padding: 16px;
       align-items: center;
@@ -438,6 +439,7 @@
       width: 100%;
       display: flex;
       justify-content: center;
+      margin-top: -20px;
     }
 
     .bannerImage img {
@@ -447,33 +449,36 @@
     }
 
     .bannerContent {
-      width: 100%;
-      height: auto;
+      width: 320px;
+      height: 170px;
       align-items: center;
       text-align: center;
-      margin-top: 20px;
-      padding: 0 16px;
+      margin-top: 2px;
     }
 
     .title h2 {
       margin-right: 0;
-      width: auto;
-      font-size: 24px;
+      width: 156px;
+      height: 25px;
+      font-size: 18px;
       white-space: normal;
+      text-align: center;
+      margin-top: 0;
     }
 
     .description {
-      width: 100%;
-      height: auto;
+      width: 290px;
+      height: 66px;
       margin: 16px 0;
+      margin-top: -40px;
       padding: 0;
-      font-size: 16px;
-      line-height: 160%;
+      font-size: 12px;
+      line-height: 180%;
       text-align: justify;
     }
 
     .buttons {
-      gap: 4px;
+      gap: -5px;
       align-items: center;
       width: 320px;
       margin-right: 20px;
@@ -481,19 +486,19 @@
 
     .startButton,
     .viewProducts {
-      width: 90%;
-      font-size: 16px;
+      width:132px;
+      height: 32px;
+      font-size: 10px;
       padding: 12px 0;
+      align-content: center;
     }
-  }
+
+
   .categoryItem{
     width: 68px;
     height: 64px;
   }
-
   .categoriesTitle {
-
-
     font-size: 14px;
     font-weight: bold;
     margin-bottom: 15px;
@@ -505,11 +510,26 @@
     line-height: 140%;
     color: variables.$gray-10;
     margin-top: 42px;
-  white-space: nowrap;
+    white-space: nowrap;
+    img{
+      display: none;
+    }
   }
+  .show{
+    margin-right: 100px !important;
+    font-size: 10px;
+    line-height: 180%;
+  }
+  .flashes{
+    position:relative;
+    margin-right: 290px;
+    margin-top: -45px;
+  }
+
   .categoryImage{
     width: 60px;
     height: 32px;
+
   }
   .categoryName{
     width: 46px;
@@ -518,15 +538,20 @@
     white-space: nowrap;
   }
 .categoriesList{
-  margin-right: 10px;
+  margin-right: -20px;
   height: auto;
   width: 680px;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
 }
+
   .grid{
-    grid-template-columns: repeat(2, 1fr); // دو ستون برای موبایل و تبلت
+    grid-template-columns: repeat(2, 1fr);
     gap: 6px;
     width: auto;
-    margin-right: -10px;
+    margin-right: -15px;
+    margin-top: -8px;
+
   }
   .card{
     width: 142px;
@@ -546,8 +571,9 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 5px;
-    width: 360px;
-    margin-right: -10px;
+    width: 340px;
+    margin-right: 10px;
+    margin-left: 10px;
   }
   .discountcard{
     position: relative;
@@ -555,13 +581,16 @@
     background-position: center;
     border-radius: 16px;
     overflow: hidden;
-    width: 68px;
-    height: 64px;
+    width: 54px;
+    height: 50px;
     display: flex;
-    padding: 16px;
+    padding: 12px;
     color: variables.$tint-1;
     font-weight: bold;
 
+  }
+  .discountcard:first-child{
+    margin-top: -2px;
   }
   .badge {
     position: absolute;
@@ -591,5 +620,69 @@
     width: 152px;
     height: 134px;
     margin-top: 20px;
+  }
+  .fallow{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+    width: auto;
+    margin-right: -10px;
+  }
+  .box{
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    height: 200px;
+    gap: 5px;
+    margin-top: 100px;
+    margin-right: 10px;
+  }
+
+  .cardtwo {
+    position: relative;
+    width: 320px;
+    height: 92px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: variables.$tint-5;
+
+    h3 {
+      font-size: 12px;
+      margin-bottom: 24px;
+      line-height: 180%;
+      color: variables.$gray-10;
+    }
+
+    p{
+      font-size: 10px;
+      line-height: 180%;
+      color: variables.$primary-color;
+      margin-right: 40px;
+    }
+
+
+    .gifttext {
+      width: 243px;
+      height: 140px;
+      margin-right: 24px;
+    }
+
+    .giftpic {
+      width: 135px;
+      height: 92px;
+      margin-right: 205px;
+      margin-top: -600px !important;
+    }
+  }
+  .heading{
+    font-size: 12px;
+    line-height: 180%;
+    color: variables.$gray-9;
+    width: 321px;
+    height: 44px;
+  }
+  .add{
+    width: 128px;
+    height: 34px;
   }
 }
