@@ -32,16 +32,18 @@
     margin-right: -5px;
     height: 10px;
   }
-  .searchIcon {
+  .icon {
+    position: relative;
     width: 18px;
     height: 18px;
-    margin-left: 6px;
+    left: 20px !important;
+
   }
   .logoTwo{
-    position: absolute;
-    left:180px;
+    position: relative;
+    right:-110px;
     transform: translateY(-50%);
-    top: 28px;
+    top: 10px;
     pointer-events: none;
   }
   .Logo {
