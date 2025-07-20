@@ -1,5 +1,7 @@
 import React from 'react';
 import styles from '../styles/Sidebar.module.scss';
+import SideModal from './SideModal';
+import {useState} from "react";
 
 interface Props {
     isOpen: boolean;
@@ -7,6 +9,8 @@ interface Props {
 }
 
 const Sidebar: React.FC<Props> = ({ isOpen, onClose }) => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
     return (
         <>
             {isOpen && (
@@ -27,7 +31,13 @@ const Sidebar: React.FC<Props> = ({ isOpen, onClose }) => {
                             ].map((item, i) => (
                                 <div key={i}
                                     className={`${styles.item} ${item === 'جشن و مهمانی' ? styles.extraMargin : ''}`}
+                                     onClick={() => {
+                                         if (item === 'پوشاک') {
+                                             setIsModalOpen(true);
+                                         }
+                                     }}
                                 >
+
                                     <span>{item}</span>
                                     <span className={styles.arrow}>‹</span>
                                 </div>
@@ -36,6 +46,9 @@ const Sidebar: React.FC<Props> = ({ isOpen, onClose }) => {
                         </div>
                     </div>
                     <div className={styles.backdrop} onClick={onClose} />
+                    {isModalOpen && (
+                        <SideModal isOpen={true} onClose={() => setIsModalOpen(false)} />
+                    )}
                 </div>
             )}
         </>
