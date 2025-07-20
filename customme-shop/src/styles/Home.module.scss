@@ -122,13 +122,22 @@
   
   .categoriesList {
     display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
     justify-content: center;
     gap: 15px;
-    flex-wrap: wrap;
-    width: 1224px;
+    width: 100%;
     height: 128px;
     margin-right: 100px;
 
+    @media (max-width: 768px) {
+      overflow-x: auto;
+      flex-wrap: wrap;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
   .categoryItem {
     background: variables.$tint-1;
@@ -544,11 +553,14 @@
     white-space: nowrap;
   }
 .categoriesList{
-  margin-right: -20px;
-  height: auto;
-  width: 680px;
-  overflow-x: scroll;
-  scroll-behavior: smooth;
+  display: flex;
+  margin-right: 12px;
+  height: 100px;
+  width: 100vw;
+  overflow-x: auto;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
 }
 
   .grid{

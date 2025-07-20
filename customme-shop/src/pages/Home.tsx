@@ -68,18 +68,12 @@ const popular = {
     ],
   };
     const scrollRef = useRef<HTMLDivElement>(null);
-    const handleScrollLeft = () => {
-        if (scrollRef.current) {
-            scrollRef.current.scrollLeft -= 50;
-        }
+    const scrollLeft = () => {
+        scrollRef.current?.scrollBy({ left: 100, behavior: "smooth" });
     };
 
-    const handleScrollRight = () => {
-        if (scrollRef.current) {
-            console.log('scrollLeft before:', scrollRef.current.scrollLeft);
-            scrollRef.current.scrollLeft += 60;
-            console.log('scrollLeft after:', scrollRef.current.scrollLeft);
-        }
+    const scrollRight = () => {
+        scrollRef.current?.scrollBy({ left: -100, behavior: "smooth" });
     };
 
     return (
@@ -115,15 +109,15 @@ const popular = {
             دسته بندی محصولات
             <div className={styles.line}></div>
         </h3>
-        {!ismobile ? (
-            <p style={{color:"#A72F3B",marginRight:"1240px",whiteSpace:"nowrap",marginTop:"-47px",fontWeight:"bold",fontSize:"14px"}}>مشاهده بیشتر</p>
-        ) : (
+        {!ismobile &&
+            <p style={{color:"#A72F3B",marginRight:"1240px",whiteSpace:"nowrap",marginTop:"-47px",fontWeight:"bold",fontSize:"14px"}}>مشاهده بیشتر</p>}
+        {ismobile &&
             <div className={styles.flashes}>
-                <img src="/flash-l.svg"  alt="flash-l" onClick={handleScrollLeft} />
-                <img src="/flash-r.svg" alt="flash-r" onClick={handleScrollRight} />
-            </div>
-        )}
-        <div className={styles.categoriesList} ref={scrollRef}>
+                <img src="/flash-l.svg"  alt="flash-l" onClick={scrollLeft} style={{ cursor: 'pointer' }}/>
+                <img src="/flash-r.svg" alt="flash-r" onClick={scrollRight} style={{ cursor: 'pointer' }} />
+            </div>}
+
+        <div className={styles.categoriesList} ref={scrollRef} >
         {categories.map((category) => (
             <div key={category.id} className={styles.categoryItem}>
                 <img src={category.image} alt={category.name} className={styles.categoryImage} />
