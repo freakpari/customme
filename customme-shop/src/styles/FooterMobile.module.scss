@@ -1,0 +1,39 @@
+@use "variables" as variables;
+.footer{
+  width:360px;
+  height: 160px;
+  background-color: variables.$shade-6;
+
+}
+.context{
+  margin-top: 60px !important;
+  border:1px solid variables.$shade-6;
+  height: 100px;
+
+}
+
+.newsletter{
+  color: variables.$tint-1;
+  font-size: 12px;
+  margin-right: 98px;
+  width: 175px;
+}
+.socialIcons{
+  width: 176px;
+  height: 24px;
+  display: flex;
+  gap: 24px;
+  margin-right: 95px;
+}
+.socialIcons svg {
+  width: 32px;
+  height: 20px;
+  color: white;
+}
+.copyright{
+  font-size: 10px;
+  color: variables.$tint-1;
+  margin-right: 45px;
+
+
+}
