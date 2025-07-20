@@ -244,26 +244,32 @@ const popular = {
       </div>
       
     </div>
+        {ismobile && <h3 style={{whiteSpace:"nowrap"}} className={styles.categoriesTitle}>
+            <img src="/star.svg" style={{width:"30px"}} alt="star" />
+            جدیدترین طرح ها
+            <div style={{width:"990px"}} className={styles.line}></div>
+            <p style={{whiteSpace:"nowrap",marginRight:"100px"}}>مشاهده بیشتر</p>
+        </h3>}
     <div className={styles.grid}>
-      <div >
+      <div className={styles.bags} >
         <h4 className={styles.heading}>محصولاتی که طراحی شده رو ببینید و در صورت نیاز طرحشون رو مطابق سلیقه خودتون تغییر بدید</h4>
-        <img src='/sbag.svg' />
-        <img src='/lbag.svg' />
+          <div className={styles.bag}>
+              <img src='/sbag.svg' />
+              <img src='/lbag.svg' />
+          </div>
 
       </div>
-
         {(ismobile
                 ? Array.from({ length: 4 })
                 : Array.from({ length: 7 })
         ).map((_, index) => (
-        <div key={index} className={styles.card}>
+        <div key={index} className={`${styles.card} ${styles[`card${index}`]}`}>
             <img src="/totbag.svg" alt={popular.title} className={styles.image} />
             <h3 className={styles.title}>کیف زنانه
             <img src="/Like.svg" />
             </h3>
             <p className={styles.explain} style={{whiteSpace:"nowrap"}}> دارای رنگ بندی، قابل طراحی</p>
             <h3>۱۵۰,۰۰۰ تومان</h3>
-        
         </div>
         
     ))}
