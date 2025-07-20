@@ -34,12 +34,10 @@
       justify-content: space-between;
       font-size: 14px;
       color: variables.$gray-7;
-        span{
-          border-left: 1px solid variables.$gray-7;
-      }
-      
     }
-  
+    .stateItems{
+      border-left: 1px solid variables.$gray-7;
+    }
     .designs {
       display: flex;
       justify-content: space-around;
@@ -84,4 +82,33 @@
     gap: 4px;
     
   }
+@media (max-width: 768px) {
+  .profilecard {
+    width: 152px;
+    height: 244px;
+    .profileheader {
+      justify-items: center;
+      .profilename {
+        font-size: 10px;
+        margin-right: 5px;
+
+      }
+    }
+    .profilestats {
+      flex-direction: column;
+
+      .stateItems {
+        border-left: none;
+      }
+    }
+  }
+  .add {
+    width: 128px;
+    height: 32px;
+    margin-right: 15px;
+  }
+
+}
+
+
   
