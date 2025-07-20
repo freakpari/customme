@@ -1,12 +1,14 @@
 import styles from "../styles/navbarMobile.module.scss";
 import {Link} from "react-router-dom";
-
+import Sidebar from "./Sidebar.tsx";
+import {useState} from "react";
 
 export default function  NavbarMobile(){
+  const [open, setOpen] = useState(false);
 
 return(
 <div  className={styles.navbar}>
-    <div className={styles.navbarLogo}>
+    <div className={styles.navbarLogo} onClick={() => setOpen(true)}>
         <Link to="/" >
             <img src="/menu.svg" alt="Logo 1"  />
         </Link>
@@ -25,6 +27,7 @@ return(
         </Link>
 
     </div>
+    <Sidebar isOpen={open} onClose={() => setOpen(false)} />
 
 
 
