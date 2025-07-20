@@ -7,7 +7,9 @@ import MainMenu from '../component/MainMenu';
 import IsMobile from "../../hooks/mobile";
 import NavbarMobile from "../component/NavbarMobile";
 import {useRef} from "react";
-import NavigationMobile from "../component/NavigationMobile";
+import NavigationHome from "../component/NavigationHome.tsx";
+import FooterMobile from "../component/FooterMobile";
+
 const categories = [
     { id: 1, name: "قاب موبایل", image: "/book.svg" },
     { id: 2, name: "کارت تبریک", image: "/book.svg" },
@@ -16,7 +18,7 @@ const categories = [
     { id: 5, name: "لباس", image: "/book.svg" },
     { id: 6, name: "دکور خانه", image: "/book.svg" },
 ];
-const images = [
+const wedding = [
   "/bride1.svg",
   "/bride2.svg",
   "/bride3.svg",
@@ -39,11 +41,11 @@ type CategoryProps = {
     { title: "دیجیتال", image: "/school.svg" },
   ];
 
-
-
-
 export default function  Home ()  {
+
 const ismobile = IsMobile();
+const visibleImages = ismobile ? wedding.slice(0, 4) : wedding.slice(0, 6);
+
 const product = {
         image: "tshirtred.svg",
         title: " تیشرت زنانه",
@@ -152,7 +154,7 @@ const popular = {
                         {product.title}
                         <img src="/Like.svg" />
                     </h3>
-                    <p>داری رنگ بندی،قابل طراحی</p>
+                    <p className={styles.explain}>داری رنگ بندی،قابل طراحی</p>
                     <p className={styles.price}>{product.price} تومان</p>
                 </div>
             ))}
@@ -162,7 +164,7 @@ const popular = {
         <img src="/discountshape.svg" alt="discountshape" />
         فروش ویژه  
           <div style={{width:"990px"}} className={styles.line}></div>
-            <p style={{whiteSpace:"nowrap",marginRight:"150px"}}>مشاهده بیشتر</p>
+            <p style={{whiteSpace:"nowrap",marginRight:"140px"}}>مشاهده بیشتر</p>
             </h3>
     <div className={styles.gridtwo}>
       {discount.map((category, index) => (
@@ -195,7 +197,7 @@ const popular = {
             <h3 className={styles.title}>{popular.title}
             <img src="/Like.svg" />
             </h3>
-            <p style={{whiteSpace:"nowrap"}}> قابل طراحی و چاپ بر روی انواع محصولات</p>
+            <p className={styles.explain}> قابل طراحی و چاپ بر روی انواع محصولات</p>
             <button className={styles.add}>
               <img src='/add.svg' alt="add" />
               افزودن به گالری
@@ -259,24 +261,24 @@ const popular = {
             <h3 className={styles.title}>کیف زنانه
             <img src="/Like.svg" />
             </h3>
-            <p style={{whiteSpace:"nowrap"}}> دارای رنگ بندی، قابل طراحی</p>
+            <p className={styles.explain} style={{whiteSpace:"nowrap"}}> دارای رنگ بندی، قابل طراحی</p>
             <h3>۱۵۰,۰۰۰ تومان</h3>
         
         </div>
         
     ))}
     </div>
-    
+
     <div className={styles.weddinginvite}>
       <div className={styles.images}>
-        {images.map((src, index) => (
-          <img key={index} src={src} alt={`Wedding ${index}`} className={styles.image} />
+        {visibleImages.map((src, index) => (
+          <img key={index} src={src} alt={`Wedding ${index}`}  className={`${styles.image} ${ismobile ? styles[`mobileImg${index}`] : ""}`}/>
         ))}
       </div>
       <h2>کارت دعوت عروسی رو خودتون طراحی کنید</h2>
-      <button className={styles.startButton2}>
+        <button className={styles.startButton2}>
             <img src='brush.svg' alt='brush' />
-            شروع طراحی</button>
+            <p>شروع طراحی</p></button>
                 </div>
         <h3 style={{whiteSpace:"nowrap"}} className={styles.categoriesTitle}>
         <img src="/fav.svg" alt="star" />
@@ -292,7 +294,7 @@ const popular = {
                 <h3 className={styles.title}>قاب موبایل
                 <img src="/Like2.svg" />
                 </h3>
-                <p>داری رنگ بندی،قابل طراحی</p>
+                <p className={styles.explain}>داری رنگ بندی،قابل طراحی</p>
     
                 <p className={styles.price}>{product.price} تومان</p>
             
@@ -300,7 +302,8 @@ const popular = {
         ))}
         </div>
         {!ismobile && <Footer /> }
-        {ismobile && <NavigationMobile />}
+        {ismobile && <FooterMobile />}
+        {ismobile && <NavigationHome />}
     </div>
     
     
