@@ -656,7 +656,7 @@
     height: 200px;
     gap: 5px;
     margin-top: 350px;
-    margin-right: 10px;
+    margin-right: 22px;
   }
 
   .cardtwo {
@@ -684,16 +684,25 @@
 
 
     .gifttext {
-      width: 243px;
-      height: 140px;
+      p{
+        margin-top: -10px;
+      }
+      h3{
+        width: 161px;
+        height: 44px;
+        white-space: wrap;
+        font-size: 12px;
+      }
+
       margin-right: 24px;
     }
 
     .giftpic {
       width: 135px;
       height: 92px;
-      margin-right: 205px;
-      margin-top: -600px !important;
+      margin-right: 190px;
+      top: -80px;
+      position: relative;
     }
   }
   .heading{

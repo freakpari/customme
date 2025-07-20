@@ -230,7 +230,8 @@ const popular = {
             {!ismobile && <button className={styles.button}>دیدن محصولات</button>}
             {ismobile && <p> دیدن محصولات</p>}
           </div>
-          <img className={styles.giftpic} src="/gift2.svg" alt="هدیه برای خانم‌ها" />
+          {!ismobile && <img className={styles.giftpic} src="/gift2.svg" alt="هدیه برای خانم‌ها" /> }
+          {ismobile && <img src="/mom1.svg" className={styles.giftpic} /> }
 
       </div>
       <div className={styles.cardtwo}>
@@ -239,7 +240,9 @@ const popular = {
             {!ismobile && <button className={styles.button}>دیدن محصولات</button>}
             {ismobile && <p> دیدن محصولات</p>}
           </div>
-          <img className={styles.giftpic} src="/gift.svg" alt="هدیه برای آقایان" />
+          {!ismobile &&  <img className={styles.giftpic} src="/gift.svg" alt="هدیه برای آقایان" />}
+          {ismobile && <img src="/mom1.svg" className={styles.giftpic} /> }
+
 
       </div>
       
