@@ -90,7 +90,8 @@ export default function Signup() {
           <img className={styles.steppermobile} src="/Steppermobile2.svg" alt="stepper" />
       )}
       <div className={styles.title}>
-          <img src="/arrowr.svg" alt="arrow" className={styles.mobileOnly} />
+          <img src="/arrowr.svg" alt="arrow" className={styles.mobileOnly}   onClick={step === 2 ? handlePrevStep : undefined}
+          />
         <h2 className={styles.desktopOnly}>فرم ثبت اطلاعات</h2>
         <p className={styles.mobileOnly}> فرم ثبت ‌نام</p>
       </div>
