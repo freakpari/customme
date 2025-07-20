@@ -189,10 +189,10 @@ body {
     gap: 2px;
     padding: 10px;
     margin-right: 5px;
-    -ms-overflow-style: none; /* IE and Edge */
+    -ms-overflow-style: none;
   
     &::-webkit-scrollbar {
-      display: none; /* Chrome, Safari */
+      display: none;
     }
 
   }
